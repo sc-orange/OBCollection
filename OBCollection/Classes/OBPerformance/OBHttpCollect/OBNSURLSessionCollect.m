@@ -26,14 +26,14 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.original_Session = class_getClassMethod(NSClassFromString(@"NSURLSession"), @selector(sessionWithConfiguration:delegate:delegateQueue:));
-        self.new_Session = class_getClassMethod(NSClassFromString(@"NSURLSession"), @selector(newSessionWithConfiguration:delegate:delegateQueue:));
-        
-        self.original_DataTaskWithRequest = class_getInstanceMethod(NSClassFromString(@"NSURLSession"), @selector(dataTaskWithRequest:));
-        self.new_DataTaskWithRequest = class_getInstanceMethod(NSClassFromString(@"NSURLSession"), @selector(newSessionDataTaskWithRequest:));
-        
-        self.original_DataTaskWithRequestCompletion = class_getInstanceMethod(NSClassFromString(@"NSURLSession"), @selector(dataTaskWithRequest:completionHandler:));
-        self.new_DataTaskWithRequestCompletion = class_getInstanceMethod(NSClassFromString(@"NSURLSession"), @selector(newDataTaskWithRequest:completionHandler:));
+//        self.original_Session = class_getClassMethod(NSClassFromString(@"NSURLSession"), @selector(sessionWithConfiguration:delegate:delegateQueue:));
+//        self.new_Session = class_getClassMethod(NSClassFromString(@"NSURLSession"), @selector(newSessionWithConfiguration:delegate:delegateQueue:));
+//
+//        self.original_DataTaskWithRequest = class_getInstanceMethod(NSClassFromString(@"NSURLSession"), @selector(dataTaskWithRequest:));
+//        self.new_DataTaskWithRequest = class_getInstanceMethod(NSClassFromString(@"NSURLSession"), @selector(newSessionDataTaskWithRequest:));
+//
+//        self.original_DataTaskWithRequestCompletion = class_getInstanceMethod(NSClassFromString(@"NSURLSession"), @selector(dataTaskWithRequest:completionHandler:));
+//        self.new_DataTaskWithRequestCompletion = class_getInstanceMethod(NSClassFromString(@"NSURLSession"), @selector(newDataTaskWithRequest:completionHandler:));
         
     }
     return self;
