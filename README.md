@@ -22,7 +22,7 @@ pod 'OBCollection'
 
 ## Author
 
-3210492660@qq.com
+200887744@qq.com, 3210492660@qq.com
 
 ## License
 
