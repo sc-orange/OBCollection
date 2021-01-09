@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "OBCollection.h"
 #import "OBCollectionManager.h"
 #import "OBConfigSetting.h"
 #import "OBDataHelper.h"

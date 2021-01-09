@@ -8,7 +8,7 @@
 
 #import "OBAppDelegate.h"
 #import "OBTabBarController.h"
-#import "OBCollectionManager.h"
+#import <OBCollection/OBCollection.h>
 
 @implementation OBAppDelegate
 
