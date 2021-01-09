@@ -1,0 +1,16 @@
+PODS:
+  - OBCollection (0.1.0)
+
+DEPENDENCIES:
+  - OBCollection (from `../`)
+
+EXTERNAL SOURCES:
+  OBCollection:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  OBCollection: 294dff231c600756003104aa4bc726692e36902e
+
+PODFILE CHECKSUM: 01d6bce519929a4ba35135440d2d8abe23bd7106
+
+COCOAPODS: 1.9.1

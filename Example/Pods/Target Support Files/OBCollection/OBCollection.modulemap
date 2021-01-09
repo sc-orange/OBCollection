@@ -1,0 +1,6 @@
+framework module OBCollection {
+  umbrella header "OBCollection-umbrella.h"
+
+  export *
+  module * { export * }
+}
