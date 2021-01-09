@@ -7,12 +7,16 @@
 //
 
 #import "OBAppDelegate.h"
+#import "OBTabBarController.h"
+#import "OBCollectionManager.h"
 
 @implementation OBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    OBTabBarController * tabBar = [[OBTabBarController alloc]init];
+    self.window.rootViewController = tabBar;
+    [[OBCollectionManager shareInstance] startCollect];
     return YES;
 }
 

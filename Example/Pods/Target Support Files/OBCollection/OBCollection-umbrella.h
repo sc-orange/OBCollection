@@ -10,6 +10,14 @@
 #endif
 #endif
 
+#import "OBCollectionManager.h"
+#import "OBConfigSetting.h"
+#import "OBDataHelper.h"
+#import "OBNSURLSessionCollect.h"
+#import "OBNSURLSessionCollectManager.h"
+#import "OBPageTrackerCollect.h"
+#import "NSDictionary+OBSafeDictionary.h"
+#import "OBUtils.h"
 
 FOUNDATION_EXPORT double OBCollectionVersionNumber;
 FOUNDATION_EXPORT const unsigned char OBCollectionVersionString[];

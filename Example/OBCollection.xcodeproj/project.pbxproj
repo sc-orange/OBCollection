@@ -24,6 +24,11 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		C2EA041025A9F3A5006F9B22 /* OBTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA040F25A9F3A4006F9B22 /* OBTabBarController.m */; };
+		C2EA041C25A9F3AE006F9B22 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA041525A9F3AE006F9B22 /* HomeController.m */; };
+		C2EA041D25A9F3AE006F9B22 /* HomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EA041625A9F3AE006F9B22 /* HomeController.xib */; };
+		C2EA041E25A9F3AE006F9B22 /* TestController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA041925A9F3AE006F9B22 /* TestController.m */; };
+		C2EA041F25A9F3AE006F9B22 /* TestController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EA041A25A9F3AE006F9B22 /* TestController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		354146D4C848EC756A2D9F37 /* OBCollection.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = OBCollection.podspec; path = ../OBCollection.podspec; sourceTree = "<group>"; };
+		354146D4C848EC756A2D9F37 /* OBCollection.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = OBCollection.podspec; path = ../OBCollection.podspec; sourceTree = "<group>"; };
 		36FE13DBD0E95D054BBE940C /* Pods_OBCollection_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBCollection_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6BDE14EDDBD1D7977DE708 /* Pods-OBCollection_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBCollection_Example.debug.xcconfig"; path = "Target Support Files/Pods-OBCollection_Example/Pods-OBCollection_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* OBCollection_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OBCollection_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,8 +68,16 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A671D33E08D31B1A48366AD2 /* Pods_OBCollection_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBCollection_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0A6011C4B186D1A1002CA8B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		CC257491736501B1D9EA110E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B0A6011C4B186D1A1002CA8B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C2EA040E25A9F3A4006F9B22 /* OBTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBTabBarController.h; sourceTree = "<group>"; };
+		C2EA040F25A9F3A4006F9B22 /* OBTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBTabBarController.m; sourceTree = "<group>"; };
+		C2EA041525A9F3AE006F9B22 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		C2EA041625A9F3AE006F9B22 /* HomeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeController.xib; sourceTree = "<group>"; };
+		C2EA041725A9F3AE006F9B22 /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
+		C2EA041925A9F3AE006F9B22 /* TestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestController.m; sourceTree = "<group>"; };
+		C2EA041A25A9F3AE006F9B22 /* TestController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestController.xib; sourceTree = "<group>"; };
+		C2EA041B25A9F3AE006F9B22 /* TestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestController.h; sourceTree = "<group>"; };
+		CC257491736501B1D9EA110E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E6F208F4BBE603C7E086CCEE /* Pods-OBCollection_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBCollection_Example.release.xcconfig"; path = "Target Support Files/Pods-OBCollection_Example/Pods-OBCollection_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F309D6D3194453681AC61D4C /* Pods-OBCollection_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBCollection_Tests.debug.xcconfig"; path = "Target Support Files/Pods-OBCollection_Tests/Pods-OBCollection_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,8 +145,11 @@
 		6003F593195388D20070C39A /* Example for OBCollection */ = {
 			isa = PBXGroup;
 			children = (
+				C2EA041325A9F3AE006F9B22 /* OBDemoAPP */,
 				6003F59C195388D20070C39A /* OBAppDelegate.h */,
 				6003F59D195388D20070C39A /* OBAppDelegate.m */,
+				C2EA040E25A9F3A4006F9B22 /* OBTabBarController.h */,
+				C2EA040F25A9F3A4006F9B22 /* OBTabBarController.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* OBViewController.h */,
 				6003F5A6195388D20070C39A /* OBViewController.m */,
@@ -185,6 +201,35 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		C2EA041325A9F3AE006F9B22 /* OBDemoAPP */ = {
+			isa = PBXGroup;
+			children = (
+				C2EA041425A9F3AE006F9B22 /* Home */,
+				C2EA041825A9F3AE006F9B22 /* Test */,
+			);
+			path = OBDemoAPP;
+			sourceTree = "<group>";
+		};
+		C2EA041425A9F3AE006F9B22 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C2EA041525A9F3AE006F9B22 /* HomeController.m */,
+				C2EA041625A9F3AE006F9B22 /* HomeController.xib */,
+				C2EA041725A9F3AE006F9B22 /* HomeController.h */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C2EA041825A9F3AE006F9B22 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				C2EA041925A9F3AE006F9B22 /* TestController.m */,
+				C2EA041A25A9F3AE006F9B22 /* TestController.xib */,
+				C2EA041B25A9F3AE006F9B22 /* TestController.h */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		CA9690451FB12EED18DBB53E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,7 +238,6 @@
 				F309D6D3194453681AC61D4C /* Pods-OBCollection_Tests.debug.xcconfig */,
 				6F6F6745A4D89F942AAE351D /* Pods-OBCollection_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +302,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -280,6 +325,8 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				C2EA041F25A9F3AE006F9B22 /* TestController.xib in Resources */,
+				C2EA041D25A9F3AE006F9B22 /* HomeController.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,8 +411,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2EA041025A9F3A5006F9B22 /* OBTabBarController.m in Sources */,
+				C2EA041E25A9F3AE006F9B22 /* TestController.m in Sources */,
 				6003F59E195388D20070C39A /* OBAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* OBViewController.m in Sources */,
+				C2EA041C25A9F3AE006F9B22 /* HomeController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
