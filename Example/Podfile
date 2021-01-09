@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'OBCollection_Example' do
+  pod 'OBCollection', :path => '../'
+
+  target 'OBCollection_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
