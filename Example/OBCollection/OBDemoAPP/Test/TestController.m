@@ -8,22 +8,50 @@
 
 #import "TestController.h"
 
-@interface TestController ()
+static NSString *const kCellIdentifier = @"kCellIdentifier";
 
-@property (weak, nonatomic) IBOutlet UILabel *pageTrackInfo;
-
+@interface TestController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *dataArray;
 @end
 
 @implementation TestController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self createUI];
 }
 
-- (IBAction)getPageTrackInfo:(UIButton *)sender {
-    NSArray *pageArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"ob_page_data"];
-    self.pageTrackInfo.text = pageArray.count > 0 ? [pageArray componentsJoinedByString:@"-"] : @"请打开配置开关";
+- (void)createUI {
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
+    NSDictionary *dic = self.dataArray[indexPath.row];
+    cell.textLabel.text = dic[@"name"];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *cls = self.dataArray[indexPath.row][@"class"];
+    UIViewController * vc = [[NSClassFromString(cls) alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (NSArray *)dataArray {
+    if (!_dataArray) {
+        _dataArray = @[@{@"name" : @"页面轨迹采集", @"class" : @"OBPageCollectController"},
+                       @{@"name" : @"HTTP采集", @"class" : @"OBHttpCollectController"}
+        ];
+    }
+    return _dataArray;
 }
 
 @end
