@@ -213,9 +213,9 @@
 		C2EA041425A9F3AE006F9B22 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C2EA041725A9F3AE006F9B22 /* HomeController.h */,
 				C2EA041525A9F3AE006F9B22 /* HomeController.m */,
 				C2EA041625A9F3AE006F9B22 /* HomeController.xib */,
-				C2EA041725A9F3AE006F9B22 /* HomeController.h */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -223,9 +223,9 @@
 		C2EA041825A9F3AE006F9B22 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				C2EA041B25A9F3AE006F9B22 /* TestController.h */,
 				C2EA041925A9F3AE006F9B22 /* TestController.m */,
 				C2EA041A25A9F3AE006F9B22 /* TestController.xib */,
-				C2EA041B25A9F3AE006F9B22 /* TestController.h */,
 			);
 			path = Test;
 			sourceTree = "<group>";

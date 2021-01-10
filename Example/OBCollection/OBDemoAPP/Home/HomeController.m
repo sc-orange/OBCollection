@@ -7,7 +7,7 @@
 //
 
 #import "HomeController.h"
-#import "OBConfigSetting.h"
+#import <OBCollection/OBCollection.h>
 
 @interface HomeController ()
 @property (weak, nonatomic) IBOutlet UISwitch *pageCollectSwitch;
@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSDictionary *dic = [OBConfigSetting readLocalSetting];
+    NSDictionary *dic = [[OBCollectionManager sharedInstance].configSetting readLocalSetting];
     self.pageCollectSwitch.on = [dic boolForKey:OBPageTrackSetting];
     self.crachCollectSwitch.on = [dic boolForKey:OBCrashSetting];
     self.httpCollectSwitch.on = [dic boolForKey:OBHttpSetting];
@@ -33,7 +33,7 @@
 
 - (IBAction)collectClick:(UISwitch *)sender {
     NSDictionary *setting = [self checkAllSwitch];
-    [OBConfigSetting refreshLocalSetting:setting];
+    [[OBCollectionManager sharedInstance].configSetting refreshLocalSetting:setting];
 }
 
 - (NSDictionary *)checkAllSwitch {

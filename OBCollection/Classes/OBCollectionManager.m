@@ -45,7 +45,7 @@ static OBCollectionManager *collectionManager = nil;
 
 #pragma mark - 配置相关
 - (void)startCollect {
-    NSDictionary *setting = [OBConfigSetting readLocalSetting];
+    NSDictionary *setting = [self.configSetting readLocalSetting];
     [self makeSettingWith:setting];
     
     self.addQueue = dispatch_queue_create("add_queue", DISPATCH_QUEUE_SERIAL);

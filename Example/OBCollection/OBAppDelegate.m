@@ -14,10 +14,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [OBCollectionManager openLog:YES];
+    [[OBCollectionManager sharedInstance] startCollect];
+    
     OBTabBarController * tabBar = [[OBTabBarController alloc]init];
     self.window.rootViewController = tabBar;
-    [[OBCollectionManager sharedInstance] startCollect];
-    [OBCollectionManager openLog:YES];
     return YES;
 }
 

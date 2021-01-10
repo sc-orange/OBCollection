@@ -29,11 +29,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL catonSwitch;
 
 //获取本地配置信息
-+ (NSDictionary *)readLocalSetting;
+- (NSDictionary *)readLocalSetting;
 //保存配置信息
-+ (void)saveLocalSetting:(NSDictionary *)setting;
+- (void)saveLocalSetting:(NSDictionary *)setting;
 //刷新配置信息
-+ (void)refreshLocalSetting:(NSDictionary *)setting;
+- (void)refreshLocalSetting:(NSDictionary *)setting;
 //配置设置
 - (void)setConfigSetting:(NSDictionary *)setting;
 

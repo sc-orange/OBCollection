@@ -28,7 +28,7 @@
     self.catonSwitch = [setting boolForKey:OBCatonSetting];
 }
 
-+ (NSDictionary *)readLocalSetting {
+- (NSDictionary *)readLocalSetting {
     id setting = [[NSUserDefaults standardUserDefaults] objectForKey:@"ob_local_setting"];
     if ([setting isKindOfClass:NSDictionary.class]) {
         return setting;
@@ -36,14 +36,14 @@
     return nil;
 }
 
-+ (void)saveLocalSetting:(NSDictionary *)setting {
+- (void)saveLocalSetting:(NSDictionary *)setting {
     [[NSUserDefaults standardUserDefaults] setObject:setting forKey:@"ob_local_setting"];
 }
 
-+ (void)refreshLocalSetting:(NSDictionary *)setting {
-    NSDictionary *localSampling = [OBConfigSetting readLocalSetting];
+- (void)refreshLocalSetting:(NSDictionary *)setting {
+    NSDictionary *localSampling = [self readLocalSetting];
     if(!localSampling || ![setting isEqualToDictionary:localSampling]) {
-        [OBConfigSetting saveLocalSetting:setting];
+        [self saveLocalSetting:setting];
     }
 }
 
