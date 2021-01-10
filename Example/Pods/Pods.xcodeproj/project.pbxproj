@@ -28,6 +28,8 @@
 		A8F521A1571EDCF66496EDB2495C04BC /* OBCollectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EC61CE914FF921B0D70AD7A185DBF3 /* OBCollectionManager.m */; };
 		AC8B0E38FFC0274498258B8430FF1118 /* OBHttpData.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B15EF7DD74A88087DEDEA81B7C9C39A /* OBHttpData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2D65A5465982AD42B0B6118F3FC8E5E /* OBConfigSetting.h in Headers */ = {isa = PBXBuildFile; fileRef = BF5F175E186E007C10A076D64F3B255C /* OBConfigSetting.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C278F0F925AAD9FB004DDAC9 /* OBLog.h in Headers */ = {isa = PBXBuildFile; fileRef = C278F0F725AAD9FB004DDAC9 /* OBLog.h */; };
+		C278F0FA25AAD9FB004DDAC9 /* OBLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C278F0F825AAD9FB004DDAC9 /* OBLog.m */; };
 		C2B1A4FDACD4F5E6AABEA459D672C7B3 /* OBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D468A9CFCEEEF830F806B189D4CF2B64 /* OBUtils.m */; };
 		C6B293ACA01A4303544ABA71434EB683 /* OBCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D7F077FC0E6278B70E7D959BF1206A4 /* OBCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAD30CED86AA8861B8C9F8775E77A079 /* OBConfigSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA94D41AADC5CF033B59A93440E850 /* OBConfigSetting.m */; };
@@ -65,7 +67,7 @@
 		2D44768321BAD2E599FAB57B800EB8DE /* Pods-OBCollection_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OBCollection_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		30C8F8506FA594C8884C433877316BC4 /* OBPageTrackerCollect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBPageTrackerCollect.h; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		328684BC8AA374EFA85AECFEF194DACE /* OBCollection.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = OBCollection.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		328684BC8AA374EFA85AECFEF194DACE /* OBCollection.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = OBCollection.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		344DAD84D5A3A7D6E4EC647414122AE3 /* Pods-OBCollection_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OBCollection_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3CBA94D41AADC5CF033B59A93440E850 /* OBConfigSetting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBConfigSetting.m; sourceTree = "<group>"; };
 		3F8F6E53F4AA0ACD3D08BA5172481811 /* OBData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBData.h; sourceTree = "<group>"; };
@@ -74,17 +76,17 @@
 		5345B76717698528CABE013FCBC641EE /* Pods-OBCollection_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OBCollection_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5C39D697C56F70E0DE248FF497BD1ED3 /* OBCollection-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OBCollection-dummy.m"; sourceTree = "<group>"; };
 		5C85D384C8FD87FACD529D638F3D18E6 /* NSDictionary+OBSafeDictionary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+OBSafeDictionary.m"; sourceTree = "<group>"; };
-		63EA46B27C0BDE9B94516AA27C915CB4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		63EA46B27C0BDE9B94516AA27C915CB4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		68B153E4694C6609C419DCB216929C9B /* Pods-OBCollection_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OBCollection_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6AF8FD317BDFCE683FFDC38F5C1C2DBD /* Pods-OBCollection_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OBCollection_Tests-umbrella.h"; sourceTree = "<group>"; };
 		75093DC660DF412352C3FF46A78FC647 /* OBNSURLSessionCollectManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBNSURLSessionCollectManager.h; sourceTree = "<group>"; };
-		82900DDFC1ED70A43934421D03D5DE55 /* Pods_OBCollection_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OBCollection_Tests.framework; path = "Pods-OBCollection_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		84B4DD178529E7CB4B7F437759C56E34 /* Pods_OBCollection_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OBCollection_Example.framework; path = "Pods-OBCollection_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82900DDFC1ED70A43934421D03D5DE55 /* Pods_OBCollection_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBCollection_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B4DD178529E7CB4B7F437759C56E34 /* Pods_OBCollection_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBCollection_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		864E5AD92BC4AB9CD6CE1EF2DD184994 /* Pods-OBCollection_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OBCollection_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		878473B16A75BA9437E4836283965C6A /* OBData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBData.m; sourceTree = "<group>"; };
 		8FDD4D8843F2EFD51221CCB4316DA1D0 /* NSDictionary+OBSafeDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+OBSafeDictionary.h"; sourceTree = "<group>"; };
 		956AA02FC0BF5321660892D07AA4D7C2 /* OBPageTrackerCollect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBPageTrackerCollect.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DB908695AB70A33BAAB69AF3BD85761 /* OBNSURLSessionCollect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBNSURLSessionCollect.h; sourceTree = "<group>"; };
 		9F7A2188AD57EB164284B702F7D6D4BF /* Pods-OBCollection_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OBCollection_Example-dummy.m"; sourceTree = "<group>"; };
 		A89B48CEF22DB1527BE600F6BD012A5F /* OBCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OBCollection.release.xcconfig; sourceTree = "<group>"; };
@@ -96,13 +98,15 @@
 		BA1747EB0482F5C145F49143D0D4221A /* Pods-OBCollection_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OBCollection_Example-umbrella.h"; sourceTree = "<group>"; };
 		BD5B82AC97CC7F8B8E1219D9F3D960EE /* OBCollectionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OBCollectionManager.h; path = OBCollection/Classes/OBCollectionManager.h; sourceTree = "<group>"; };
 		BF5F175E186E007C10A076D64F3B255C /* OBConfigSetting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBConfigSetting.h; sourceTree = "<group>"; };
+		C278F0F725AAD9FB004DDAC9 /* OBLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBLog.h; sourceTree = "<group>"; };
+		C278F0F825AAD9FB004DDAC9 /* OBLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBLog.m; sourceTree = "<group>"; };
 		C659116B25FB7A629BB18547E45B4E07 /* Pods-OBCollection_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OBCollection_Example-frameworks.sh"; sourceTree = "<group>"; };
-		C99707E77C9375AC95371E3A30B5E49D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		C99707E77C9375AC95371E3A30B5E49D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CC74BEF0392AF07AB7E770ADDAE32F5B /* OBCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OBCollection.debug.xcconfig; sourceTree = "<group>"; };
 		D468A9CFCEEEF830F806B189D4CF2B64 /* OBUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBUtils.m; sourceTree = "<group>"; };
 		D61FE153CFF892FAEBC6F134C39AE42B /* OBCollection-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "OBCollection-Info.plist"; sourceTree = "<group>"; };
 		D969461DB3CA803E0EE9142B11E09548 /* Pods-OBCollection_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OBCollection_Example-Info.plist"; sourceTree = "<group>"; };
-		E1BF998E062021E208DFEA1850902224 /* OBCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OBCollection.framework; path = OBCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1BF998E062021E208DFEA1850902224 /* OBCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OBCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8EC61CE914FF921B0D70AD7A185DBF3 /* OBCollectionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OBCollectionManager.m; path = OBCollection/Classes/OBCollectionManager.m; sourceTree = "<group>"; };
 		FC611462946A053C23F21163DF0FD930 /* Pods-OBCollection_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OBCollection_Example.release.xcconfig"; sourceTree = "<group>"; };
 		FE61B1E79E37182DA4C3932785CDEFFB /* Pods-OBCollection_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OBCollection_Example.modulemap"; sourceTree = "<group>"; };
@@ -144,7 +148,6 @@
 				75093DC660DF412352C3FF46A78FC647 /* OBNSURLSessionCollectManager.h */,
 				142D00C4B90C1BCDE9DF2707E495E2C0 /* OBNSURLSessionCollectManager.m */,
 			);
-			name = OBHttpCollect;
 			path = OBHttpCollect;
 			sourceTree = "<group>";
 		};
@@ -198,7 +201,6 @@
 				30C8F8506FA594C8884C433877316BC4 /* OBPageTrackerCollect.h */,
 				956AA02FC0BF5321660892D07AA4D7C2 /* OBPageTrackerCollect.m */,
 			);
-			name = OBPageTrack;
 			path = OBPageTrack;
 			sourceTree = "<group>";
 		};
@@ -235,6 +237,8 @@
 				5C85D384C8FD87FACD529D638F3D18E6 /* NSDictionary+OBSafeDictionary.m */,
 				4A177B8171B23C3504DB9A176EEBFAA1 /* OBUtils.h */,
 				D468A9CFCEEEF830F806B189D4CF2B64 /* OBUtils.m */,
+				C278F0F725AAD9FB004DDAC9 /* OBLog.h */,
+				C278F0F825AAD9FB004DDAC9 /* OBLog.m */,
 			);
 			name = OBTools;
 			path = OBCollection/Classes/OBTools;
@@ -289,7 +293,6 @@
 				1B15EF7DD74A88087DEDEA81B7C9C39A /* OBHttpData.h */,
 				AE96C8CDCE852855DAEC046DE84AA10E /* OBHttpData.m */,
 			);
-			name = OBEntity;
 			path = OBEntity;
 			sourceTree = "<group>";
 		};
@@ -337,6 +340,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C278F0F925AAD9FB004DDAC9 /* OBLog.h in Headers */,
 				0363135132C40D317A15ACC4C5D8358A /* NSDictionary+OBSafeDictionary.h in Headers */,
 				2CA6B1686CCA101167C471CF9F4F00B8 /* OBCollection-umbrella.h in Headers */,
 				C6B293ACA01A4303544ABA71434EB683 /* OBCollection.h in Headers */,
@@ -476,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C278F0FA25AAD9FB004DDAC9 /* OBLog.m in Sources */,
 				FD1BA2D79579873802522DAFCBD3A315 /* NSDictionary+OBSafeDictionary.m in Sources */,
 				8E26942AB9B6894F46EF61EF959A0537 /* OBCollection-dummy.m in Sources */,
 				A8F521A1571EDCF66496EDB2495C04BC /* OBCollectionManager.m in Sources */,
@@ -742,8 +747,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

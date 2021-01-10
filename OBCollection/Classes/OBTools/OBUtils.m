@@ -32,6 +32,11 @@
     return timgString;
 }
 
++ (NSInteger)currentSeconds {
+    NSInteger seconds = [[NSDate date] timeIntervalSince1970];
+    return seconds;
+}
+
 + (NSString *)currentTime {
     return [self timeFromDate:[NSDate date]];
 }

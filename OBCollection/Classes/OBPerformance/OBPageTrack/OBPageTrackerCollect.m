@@ -6,7 +6,6 @@
 //
 
 #import "OBPageTrackerCollect.h"
-#import "OBUtils.h"
 #import <objc/message.h>
 
 @implementation OBPageTrackerCollect

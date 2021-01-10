@@ -6,10 +6,11 @@
 //
 
 #import "OBNSURLSessionCollect.h"
-#import "OBUtils.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import "OBNSURLSessionCollectManager.h"
+#import <malloc/malloc.h>
+#import "OBCollectionManager.h"
 
 @interface OBNSURLSessionCollect()
 @property(nonatomic) BOOL hasCollected;
@@ -42,17 +43,18 @@
 
 - (void)startCollect {
     if (!self.hasCollected) {
-        NSLog(@"HTTP采集开启");
+        [OBLog print:@"HTTP采集开启"];
         self.hasCollected = YES;
         method_exchangeImplementations(self.original_Session, self.new_Session);
         method_exchangeImplementations(self.original_DataTaskWithRequest, self.new_DataTaskWithRequest);
         method_exchangeImplementations(self.original_DataTaskWithRequestCompletion, self.new_DataTaskWithRequestCompletion);
+        [self exchangeResume];
     }
 }
 
 - (void)stopCollect {
     if (self.hasCollected) {
-        NSLog(@"HTTP采集关闭");
+        [OBLog print:@"HTTP采集关闭"];
         self.hasCollected = NO;
         method_exchangeImplementations(self.new_Session, self.original_Session);
         method_exchangeImplementations(self.new_DataTaskWithRequest, self.original_DataTaskWithRequest);
@@ -78,7 +80,10 @@
         SEL originalSelector = @selector(resume);
         SEL swizzledSelector = [OBUtils makeNewSelectorFromSelector:originalSelector];
         void (^swizzleBlock)(NSURLSessionTask *) = ^(NSURLSessionTask *slf) {
-            [weakSelf saveInfo:slf];
+            NSDictionary *dict = slf.currentRequest.allHTTPHeaderFields;
+            if (self.hasCollected && dict[@"orangeRequest"]) {
+                [weakSelf saveInfo:slf];
+            }
             ((void(*)(id, SEL))objc_msgSend)(slf, swizzledSelector);
         };
         [OBUtils replaceSelector:originalSelector onClass:class withBlock:swizzleBlock newSelector:swizzledSelector];
@@ -86,7 +91,91 @@
 }
 
 - (void)saveInfo:(NSURLSessionTask *)task {
-    
+    [[OBNSURLSessionCollectManager sharedInstance] addHttpDataWithTask:task];
 }
+
+@end
+
+#pragma mark - NSURLSession
+@interface NSURLSession (OBNSURLSessionCollect)
+
+//+ (NSURLSession *)newSessionWithConfiguration:(NSURLSessionConfiguration *)configuration delegate:(id<NSURLSessionDelegate>)delegate delegateQueue:(NSOperationQueue *)queue;
+
+- (NSURLSessionDataTask *)newSessionDataTaskWithRequest:(NSURLRequest *)request;
+
+- (NSURLSessionDataTask *)newDataTaskWithRequest:(NSURLRequest *)request completionHandler:(void (^)(NSData * _Nullable, NSURLResponse * _Nullable, NSError * _Nullable))completionHandler;
+
+@end
+
+@implementation NSURLSession (OBNSURLSessionCollect)
+
+//+ (NSURLSession *)newSessionWithConfiguration:(NSURLSessionConfiguration *)configuration delegate:(id<NSURLSessionDelegate>)delegate delegateQueue:(NSOperationQueue *)queue {
+//    re
+//}
+
+- (NSURLSessionDataTask *)newSessionDataTaskWithRequest:(NSURLRequest *)request {
+    NSURLRequest *req = [self handleRequest:request];
+    return [self newSessionDataTaskWithRequest:req];
+}
+
+- (NSURLSessionDataTask *)newDataTaskWithRequest:(NSURLRequest *)request completionHandler:(void (^)(NSData * _Nullable, NSURLResponse * _Nullable, NSError * _Nullable))completionHandler {
+    
+    if (completionHandler) {
+        NSURLRequest *req = [self handleRequest:request];
+        __block NSString *address = [[NSString alloc] initWithFormat:@"%p", req];
+        void(^newCompletionHandle)(NSData *data, NSURLResponse *response, NSError *error) = ^(NSData *data, NSURLResponse *response, NSError *error) {
+            if (!malloc_zone_from_ptr(CFBridgingRetain(address))) {
+                if (completionHandler) {
+                    completionHandler(data, response, error);
+                }
+                return;
+            }
+            NSURLSessionTask *dataTask = [[OBNSURLSessionCollectManager sharedInstance] taskFromAdress:address];
+            if (malloc_zone_from_ptr(CFBridgingRetain(self)) && dataTask) {
+                OBHttpData *httpData = [[OBNSURLSessionCollectManager sharedInstance] getHttpDataWithTask:dataTask];
+                if (httpData) {
+                    OBHttpData *newData = [OBHttpData copy];
+                    newData.responseTime = [OBUtils currentTime];
+                    newData.responseSpacing = [newData ob_responseTime];
+
+                    int statusCode = (int)[(NSHTTPURLResponse *)response statusCode];
+                    newData.responseStatusCode = [NSString stringWithFormat:@"%d", statusCode];
+
+                    NSDictionary *headers = [[(NSHTTPURLResponse *)response allHeaderFields] copy];
+                    newData.responseHeader = headers;
+
+                    if (error) {
+                        [OBNSURLSessionCollectManager httpErrorWithError:error HttpInfo:newData];
+                    }
+
+                    //http采集
+                    [[OBCollectionManager sharedInstance] addCollectionData:newData];
+
+                    [[OBNSURLSessionCollectManager sharedInstance] removeHttpDataWithTask:dataTask];
+                }
+            }
+
+            [[OBNSURLSessionCollectManager sharedInstance] removeTaskWithAdress:address];
+
+            if (completionHandler) {
+                completionHandler(data, response, error);
+            }
+        };
+        NSURLSessionDataTask *task = [self newDataTaskWithRequest:req completionHandler:newCompletionHandle];
+        [[OBNSURLSessionCollectManager sharedInstance] addDataTask:task WithAddress:address];
+        return task;
+    } else {
+        return [self newDataTaskWithRequest:request completionHandler:completionHandler];
+    }
+}
+
+//标记要采集的信息
+- (NSURLRequest *)handleRequest:(NSURLRequest *)request {
+    NSMutableURLRequest *obRequest = [request mutableCopy];
+    [obRequest setValue:@"orangeRequest" forHTTPHeaderField:@"orangeRequest"];
+    return obRequest;
+}
+
+
 
 @end

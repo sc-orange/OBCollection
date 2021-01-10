@@ -6,15 +6,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OBData.h"
 #import "OBConfigSetting.h"
 #import "OBPageTrackerCollect.h"
 #import "OBNSURLSessionCollect.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OBCollectionManager : NSObject
 
-+ (OBCollectionManager *)shareInstance;
++ (OBCollectionManager *)sharedInstance;
 
 // 数据采集配置信息
 @property (nonatomic, strong) OBConfigSetting *configSetting;
@@ -27,8 +29,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)startCollect;
 - (void)stopCollect;
 
-//根据采集配置设置具体功能
-- (void)makeSettingWith:(NSDictionary *)setting;
+//是否打印log
++ (void)openLog:(BOOL)open;
+
+//采集数据
+- (void)addCollectionData:(OBData *)data;
 
 @end
 

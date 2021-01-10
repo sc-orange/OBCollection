@@ -16,7 +16,8 @@
 {
     OBTabBarController * tabBar = [[OBTabBarController alloc]init];
     self.window.rootViewController = tabBar;
-    [[OBCollectionManager shareInstance] startCollect];
+    [[OBCollectionManager sharedInstance] startCollect];
+    [OBCollectionManager openLog:YES];
     return YES;
 }
 

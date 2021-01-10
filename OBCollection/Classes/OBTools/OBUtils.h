@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)replaceSelector:(SEL)originalSelector onClass:(Class)class withBlock:(id)block newSelector:(SEL)newSelector;
 //date转string
 + (NSString *)timeFromDate:(NSDate *)date;
+//获取当前时间戳
++ (NSInteger)currentSeconds;
 //获取当前时间
 + (NSString *)currentTime;
 @end
