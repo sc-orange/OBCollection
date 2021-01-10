@@ -1,5 +1,5 @@
 //
-//  OBDataHelper.h
+//  OBData.h
 //  ForORTest
 //
 //  Created by orange on 2020/11/23.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OBDataHelper : NSObject
+@interface OBData : NSObject
 
 
 @end

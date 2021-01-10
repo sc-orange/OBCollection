@@ -7,6 +7,16 @@
 
 #import "OBNSURLSessionCollectManager.h"
 
+static OBNSURLSessionCollectManager *manager = nil;
+
 @implementation OBNSURLSessionCollectManager
+
++ (OBNSURLSessionCollectManager *)sharedInstance {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        manager = [[OBNSURLSessionCollectManager alloc] init];
+    });
+    return manager;
+}
 
 @end

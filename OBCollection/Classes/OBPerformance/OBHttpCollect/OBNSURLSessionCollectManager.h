@@ -6,10 +6,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OBHttpData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OBNSURLSessionCollectManager : NSObject
+
++ (OBNSURLSessionCollectManager *)sharedInstance;
+
+- (void)addHttpDataWithTask:(NSURLSessionTask *)task;
+
+- (OBHttpData *)getHttpDataWithTask:(NSURLSessionTask *)task;
 
 @end
 

@@ -7,32 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		037E8E00E57DE581A3FD078117AD3CD2 /* OBCollectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EC61CE914FF921B0D70AD7A185DBF3 /* OBCollectionManager.m */; };
+		0363135132C40D317A15ACC4C5D8358A /* NSDictionary+OBSafeDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FDD4D8843F2EFD51221CCB4316DA1D0 /* NSDictionary+OBSafeDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		12FCFB6E7833B609C7F161FB7D0DC625 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		1699F0ADF28993863E74261914E15254 /* OBNSURLSessionCollectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75549CB68C92AF8C2765B42D834EA6EE /* OBNSURLSessionCollectManager.m */; };
-		1BC5191105A23CCD4FF1DA18495A27FE /* OBDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A68E132DE24ED12318047AF5BDB426 /* OBDataHelper.m */; };
-		2F8E9FBD458CA7ECB314993CF8C446AA /* OBPageTrackerCollect.h in Headers */ = {isa = PBXBuildFile; fileRef = 493DE4ADD4A844FE5FE07CE3C0CA2609 /* OBPageTrackerCollect.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		307C05E4C6606D14CD58CB98FC81079C /* OBConfigSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 09603092BDF23675EAF428300A01DD88 /* OBConfigSetting.m */; };
+		290C1330D6C5024D7F6299A5E52D1DC6 /* OBHttpData.m in Sources */ = {isa = PBXBuildFile; fileRef = AE96C8CDCE852855DAEC046DE84AA10E /* OBHttpData.m */; };
+		2BFCFF018F693803F77E0D950FCA998A /* OBPageTrackerCollect.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C8F8506FA594C8884C433877316BC4 /* OBPageTrackerCollect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CA6B1686CCA101167C471CF9F4F00B8 /* OBCollection-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9A7896E8EF162C39348E49C72E27F5 /* OBCollection-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		309BBDAAC83E19D165BE0FCA0C52E754 /* Pods-OBCollection_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7A2188AD57EB164284B702F7D6D4BF /* Pods-OBCollection_Example-dummy.m */; };
-		30EB219034F1931239F8D33AAEACE4F9 /* OBNSURLSessionCollect.h in Headers */ = {isa = PBXBuildFile; fileRef = F1712C23E40E729CA1FA3507E3C61EA6 /* OBNSURLSessionCollect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AB1DE9D396047BD43704C9C9CADC351 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		43119751639BF00F24D662C9E1C8BADE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		435DD071AB713FDA718BF5922DFE0BBE /* OBNSURLSessionCollect.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A8CCB0C5088AB4568C732D1F7D499C /* OBNSURLSessionCollect.m */; };
-		486E6893FA4A7C282779B28AA28FB7B3 /* NSDictionary+OBSafeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85D384C8FD87FACD529D638F3D18E6 /* NSDictionary+OBSafeDictionary.m */; };
-		5C7282B98F42606734493206C4DA5148 /* NSDictionary+OBSafeDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FDD4D8843F2EFD51221CCB4316DA1D0 /* NSDictionary+OBSafeDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		66CD2DDDD766CD23ECE936F06DC6D706 /* OBUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A177B8171B23C3504DB9A176EEBFAA1 /* OBUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		710D2959CA9615599971D290F51799BF /* OBConfigSetting.h in Headers */ = {isa = PBXBuildFile; fileRef = AF3D2D4277EF0477362397E59CA0F454 /* OBConfigSetting.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9556B45CDAE78A955ECAFCCDB97DA550 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		97F48ACE7DF49EE92BFC809F8398EAFC /* OBCollection-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9A7896E8EF162C39348E49C72E27F5 /* OBCollection-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4406351210D984F11123F79D2488BF1A /* OBNSURLSessionCollectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 142D00C4B90C1BCDE9DF2707E495E2C0 /* OBNSURLSessionCollectManager.m */; };
+		6122A8D2843B6BC74901C5B110288923 /* OBNSURLSessionCollect.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DB908695AB70A33BAAB69AF3BD85761 /* OBNSURLSessionCollect.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		85E5A6B73B59994F95191C13ED9381FA /* OBData.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F8F6E53F4AA0ACD3D08BA5172481811 /* OBData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		882997E80B77D3225C9577A040E67667 /* OBData.m in Sources */ = {isa = PBXBuildFile; fileRef = 878473B16A75BA9437E4836283965C6A /* OBData.m */; };
+		8D63490F223B56794C4B7ABE6341BE07 /* OBNSURLSessionCollect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2714375ED22E9FA24DDF8A65A4D84A /* OBNSURLSessionCollect.m */; };
+		8E26942AB9B6894F46EF61EF959A0537 /* OBCollection-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C39D697C56F70E0DE248FF497BD1ED3 /* OBCollection-dummy.m */; };
+		9777521DC6B03FCBCCCC014FD3AB1A52 /* OBPageTrackerCollect.m in Sources */ = {isa = PBXBuildFile; fileRef = 956AA02FC0BF5321660892D07AA4D7C2 /* OBPageTrackerCollect.m */; };
+		97ABE97D844D123E9332705EBC9CA4FC /* OBUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A177B8171B23C3504DB9A176EEBFAA1 /* OBUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0DB27E0AF9A01F6518F1EB2FE5FECA5 /* Pods-OBCollection_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B3A8BC813E0498E274E3A563F36E33 /* Pods-OBCollection_Tests-dummy.m */; };
-		A46C0B78DB91895AA5FD380869BE19D9 /* OBCollection-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C39D697C56F70E0DE248FF497BD1ED3 /* OBCollection-dummy.m */; };
-		AA5932BA575674E8F0F65847DF6CE5F6 /* OBDataHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 8961C6445BABE5E0EA208E20D24CABAB /* OBDataHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D38AC2558358AEC52258DD021E75EF80 /* OBPageTrackerCollect.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F47AA6D163C97CD9964B2100F9B7F97 /* OBPageTrackerCollect.m */; };
+		A2424E80954F4E57FFB9F0B5A68ED666 /* OBCollectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BD5B82AC97CC7F8B8E1219D9F3D960EE /* OBCollectionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A8F521A1571EDCF66496EDB2495C04BC /* OBCollectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8EC61CE914FF921B0D70AD7A185DBF3 /* OBCollectionManager.m */; };
+		AC8B0E38FFC0274498258B8430FF1118 /* OBHttpData.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B15EF7DD74A88087DEDEA81B7C9C39A /* OBHttpData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2D65A5465982AD42B0B6118F3FC8E5E /* OBConfigSetting.h in Headers */ = {isa = PBXBuildFile; fileRef = BF5F175E186E007C10A076D64F3B255C /* OBConfigSetting.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2B1A4FDACD4F5E6AABEA459D672C7B3 /* OBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D468A9CFCEEEF830F806B189D4CF2B64 /* OBUtils.m */; };
+		C6B293ACA01A4303544ABA71434EB683 /* OBCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D7F077FC0E6278B70E7D959BF1206A4 /* OBCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAD30CED86AA8861B8C9F8775E77A079 /* OBConfigSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBA94D41AADC5CF033B59A93440E850 /* OBConfigSetting.m */; };
 		DADB9B545598B963A747794F35C27353 /* Pods-OBCollection_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BA1747EB0482F5C145F49143D0D4221A /* Pods-OBCollection_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DFE9AAC562CE40CAC458F0ED645F993B /* Pods-OBCollection_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AF8FD317BDFCE683FFDC38F5C1C2DBD /* Pods-OBCollection_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E3A9586BD3551777B20C2BD3FF159523 /* OBCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D7F077FC0E6278B70E7D959BF1206A4 /* OBCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EF35BE97CD0DDA96234EFF3343B3A105 /* OBCollectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BD5B82AC97CC7F8B8E1219D9F3D960EE /* OBCollectionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F27D0E5E27685E21210074940E3F3495 /* OBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D468A9CFCEEEF830F806B189D4CF2B64 /* OBUtils.m */; };
-		F3416B274000649E3179DBD08723EC9B /* OBNSURLSessionCollectManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AA730E9C5DA1F523689618FA39AEDA79 /* OBNSURLSessionCollectManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E481F6309193359161C04C950CFB7015 /* OBNSURLSessionCollectManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 75093DC660DF412352C3FF46A78FC647 /* OBNSURLSessionCollectManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD1BA2D79579873802522DAFCBD3A315 /* NSDictionary+OBSafeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85D384C8FD87FACD529D638F3D18E6 /* NSDictionary+OBSafeDictionary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,17 +57,19 @@
 /* Begin PBXFileReference section */
 		00733060092D16D2354A09EBD492F1A2 /* Pods-OBCollection_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OBCollection_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		06B3A8BC813E0498E274E3A563F36E33 /* Pods-OBCollection_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OBCollection_Tests-dummy.m"; sourceTree = "<group>"; };
-		09603092BDF23675EAF428300A01DD88 /* OBConfigSetting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBConfigSetting.m; sourceTree = "<group>"; };
-		0F47AA6D163C97CD9964B2100F9B7F97 /* OBPageTrackerCollect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBPageTrackerCollect.m; sourceTree = "<group>"; };
+		142D00C4B90C1BCDE9DF2707E495E2C0 /* OBNSURLSessionCollectManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBNSURLSessionCollectManager.m; sourceTree = "<group>"; };
+		1B15EF7DD74A88087DEDEA81B7C9C39A /* OBHttpData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBHttpData.h; sourceTree = "<group>"; };
+		1B2714375ED22E9FA24DDF8A65A4D84A /* OBNSURLSessionCollect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBNSURLSessionCollect.m; sourceTree = "<group>"; };
 		1D7F077FC0E6278B70E7D959BF1206A4 /* OBCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OBCollection.h; path = OBCollection/Classes/OBCollection.h; sourceTree = "<group>"; };
-		23A8CCB0C5088AB4568C732D1F7D499C /* OBNSURLSessionCollect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBNSURLSessionCollect.m; sourceTree = "<group>"; };
 		242814C9967BA5508E99A5387885489C /* Pods-OBCollection_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OBCollection_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		2D44768321BAD2E599FAB57B800EB8DE /* Pods-OBCollection_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OBCollection_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		30C8F8506FA594C8884C433877316BC4 /* OBPageTrackerCollect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBPageTrackerCollect.h; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		328684BC8AA374EFA85AECFEF194DACE /* OBCollection.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = OBCollection.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		344DAD84D5A3A7D6E4EC647414122AE3 /* Pods-OBCollection_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OBCollection_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		3CBA94D41AADC5CF033B59A93440E850 /* OBConfigSetting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBConfigSetting.m; sourceTree = "<group>"; };
+		3F8F6E53F4AA0ACD3D08BA5172481811 /* OBData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBData.h; sourceTree = "<group>"; };
 		47242AAECF4E63C20AD95204EDBA8580 /* OBCollection-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OBCollection-prefix.pch"; sourceTree = "<group>"; };
-		493DE4ADD4A844FE5FE07CE3C0CA2609 /* OBPageTrackerCollect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBPageTrackerCollect.h; sourceTree = "<group>"; };
 		4A177B8171B23C3504DB9A176EEBFAA1 /* OBUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBUtils.h; sourceTree = "<group>"; };
 		5345B76717698528CABE013FCBC641EE /* Pods-OBCollection_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OBCollection_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5C39D697C56F70E0DE248FF497BD1ED3 /* OBCollection-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OBCollection-dummy.m"; sourceTree = "<group>"; };
@@ -73,24 +77,25 @@
 		63EA46B27C0BDE9B94516AA27C915CB4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		68B153E4694C6609C419DCB216929C9B /* Pods-OBCollection_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OBCollection_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6AF8FD317BDFCE683FFDC38F5C1C2DBD /* Pods-OBCollection_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OBCollection_Tests-umbrella.h"; sourceTree = "<group>"; };
-		75549CB68C92AF8C2765B42D834EA6EE /* OBNSURLSessionCollectManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBNSURLSessionCollectManager.m; sourceTree = "<group>"; };
+		75093DC660DF412352C3FF46A78FC647 /* OBNSURLSessionCollectManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBNSURLSessionCollectManager.h; sourceTree = "<group>"; };
 		82900DDFC1ED70A43934421D03D5DE55 /* Pods_OBCollection_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OBCollection_Tests.framework; path = "Pods-OBCollection_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B4DD178529E7CB4B7F437759C56E34 /* Pods_OBCollection_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OBCollection_Example.framework; path = "Pods-OBCollection_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		864E5AD92BC4AB9CD6CE1EF2DD184994 /* Pods-OBCollection_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OBCollection_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		8961C6445BABE5E0EA208E20D24CABAB /* OBDataHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBDataHelper.h; sourceTree = "<group>"; };
+		878473B16A75BA9437E4836283965C6A /* OBData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBData.m; sourceTree = "<group>"; };
 		8FDD4D8843F2EFD51221CCB4316DA1D0 /* NSDictionary+OBSafeDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+OBSafeDictionary.h"; sourceTree = "<group>"; };
-		99A68E132DE24ED12318047AF5BDB426 /* OBDataHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBDataHelper.m; sourceTree = "<group>"; };
+		956AA02FC0BF5321660892D07AA4D7C2 /* OBPageTrackerCollect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBPageTrackerCollect.m; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DB908695AB70A33BAAB69AF3BD85761 /* OBNSURLSessionCollect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBNSURLSessionCollect.h; sourceTree = "<group>"; };
 		9F7A2188AD57EB164284B702F7D6D4BF /* Pods-OBCollection_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OBCollection_Example-dummy.m"; sourceTree = "<group>"; };
 		A89B48CEF22DB1527BE600F6BD012A5F /* OBCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OBCollection.release.xcconfig; sourceTree = "<group>"; };
 		A927C71FD02C184CB3A763E96F98B131 /* Pods-OBCollection_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OBCollection_Tests.modulemap"; sourceTree = "<group>"; };
-		AA730E9C5DA1F523689618FA39AEDA79 /* OBNSURLSessionCollectManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBNSURLSessionCollectManager.h; sourceTree = "<group>"; };
 		AD9A7896E8EF162C39348E49C72E27F5 /* OBCollection-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OBCollection-umbrella.h"; sourceTree = "<group>"; };
+		AE96C8CDCE852855DAEC046DE84AA10E /* OBHttpData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBHttpData.m; sourceTree = "<group>"; };
 		AEFDD242DBC952CAB7A59D3F19CB7B86 /* OBCollection.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OBCollection.modulemap; sourceTree = "<group>"; };
-		AF3D2D4277EF0477362397E59CA0F454 /* OBConfigSetting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBConfigSetting.h; sourceTree = "<group>"; };
 		B9330B1946929FE38ABFB0C4BD1B2759 /* Pods-OBCollection_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OBCollection_Tests-Info.plist"; sourceTree = "<group>"; };
 		BA1747EB0482F5C145F49143D0D4221A /* Pods-OBCollection_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OBCollection_Example-umbrella.h"; sourceTree = "<group>"; };
 		BD5B82AC97CC7F8B8E1219D9F3D960EE /* OBCollectionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OBCollectionManager.h; path = OBCollection/Classes/OBCollectionManager.h; sourceTree = "<group>"; };
+		BF5F175E186E007C10A076D64F3B255C /* OBConfigSetting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBConfigSetting.h; sourceTree = "<group>"; };
 		C659116B25FB7A629BB18547E45B4E07 /* Pods-OBCollection_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OBCollection_Example-frameworks.sh"; sourceTree = "<group>"; };
 		C99707E77C9375AC95371E3A30B5E49D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		CC74BEF0392AF07AB7E770ADDAE32F5B /* OBCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OBCollection.debug.xcconfig; sourceTree = "<group>"; };
@@ -99,17 +104,16 @@
 		D969461DB3CA803E0EE9142B11E09548 /* Pods-OBCollection_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OBCollection_Example-Info.plist"; sourceTree = "<group>"; };
 		E1BF998E062021E208DFEA1850902224 /* OBCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OBCollection.framework; path = OBCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8EC61CE914FF921B0D70AD7A185DBF3 /* OBCollectionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OBCollectionManager.m; path = OBCollection/Classes/OBCollectionManager.m; sourceTree = "<group>"; };
-		F1712C23E40E729CA1FA3507E3C61EA6 /* OBNSURLSessionCollect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = OBNSURLSessionCollect.h; sourceTree = "<group>"; };
 		FC611462946A053C23F21163DF0FD930 /* Pods-OBCollection_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OBCollection_Example.release.xcconfig"; sourceTree = "<group>"; };
 		FE61B1E79E37182DA4C3932785CDEFFB /* Pods-OBCollection_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OBCollection_Example.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3C715E878226A1036A83732C299F0698 /* Frameworks */ = {
+		2F95E16782E2DDD81ED2E4FF91A99526 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9556B45CDAE78A955ECAFCCDB97DA550 /* Foundation.framework in Frameworks */,
+				3AB1DE9D396047BD43704C9C9CADC351 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +136,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F98B944C83F719A25E512DED2EB5447 /* OBHttpCollect */ = {
+			isa = PBXGroup;
+			children = (
+				9DB908695AB70A33BAAB69AF3BD85761 /* OBNSURLSessionCollect.h */,
+				1B2714375ED22E9FA24DDF8A65A4D84A /* OBNSURLSessionCollect.m */,
+				75093DC660DF412352C3FF46A78FC647 /* OBNSURLSessionCollectManager.h */,
+				142D00C4B90C1BCDE9DF2707E495E2C0 /* OBNSURLSessionCollectManager.m */,
+			);
+			name = OBHttpCollect;
+			path = OBHttpCollect;
+			sourceTree = "<group>";
+		};
 		1490AA36542A8E3C24BA70720E586F44 /* Pods-OBCollection_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,18 +183,6 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		40858D6A9BC75E74867266A95334F932 /* OBEntity */ = {
-			isa = PBXGroup;
-			children = (
-				AF3D2D4277EF0477362397E59CA0F454 /* OBConfigSetting.h */,
-				09603092BDF23675EAF428300A01DD88 /* OBConfigSetting.m */,
-				8961C6445BABE5E0EA208E20D24CABAB /* OBDataHelper.h */,
-				99A68E132DE24ED12318047AF5BDB426 /* OBDataHelper.m */,
-			);
-			name = OBEntity;
-			path = OBEntity;
-			sourceTree = "<group>";
-		};
 		5AD9437445B5C70C3EFD3C4FCAF9A950 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,23 +192,11 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		787F86830EE1CB3ED225E40E220AD2E8 /* OBHttpCollect */ = {
+		71089CE52CF5BCC4AA5627EECEA07799 /* OBPageTrack */ = {
 			isa = PBXGroup;
 			children = (
-				F1712C23E40E729CA1FA3507E3C61EA6 /* OBNSURLSessionCollect.h */,
-				23A8CCB0C5088AB4568C732D1F7D499C /* OBNSURLSessionCollect.m */,
-				AA730E9C5DA1F523689618FA39AEDA79 /* OBNSURLSessionCollectManager.h */,
-				75549CB68C92AF8C2765B42D834EA6EE /* OBNSURLSessionCollectManager.m */,
-			);
-			name = OBHttpCollect;
-			path = OBHttpCollect;
-			sourceTree = "<group>";
-		};
-		A1226E7E2EBB222C2F903504240007AC /* OBPageTrack */ = {
-			isa = PBXGroup;
-			children = (
-				493DE4ADD4A844FE5FE07CE3C0CA2609 /* OBPageTrackerCollect.h */,
-				0F47AA6D163C97CD9964B2100F9B7F97 /* OBPageTrackerCollect.m */,
+				30C8F8506FA594C8884C433877316BC4 /* OBPageTrackerCollect.h */,
+				956AA02FC0BF5321660892D07AA4D7C2 /* OBPageTrackerCollect.m */,
 			);
 			name = OBPageTrack;
 			path = OBPageTrack;
@@ -223,6 +215,17 @@
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/OBCollection";
+			sourceTree = "<group>";
+		};
+		AE170DBE2DFD9637F0FE9D3F37795D51 /* OBPerformance */ = {
+			isa = PBXGroup;
+			children = (
+				CCF19365DE34AD78638C60EECF39C541 /* OBEntity */,
+				0F98B944C83F719A25E512DED2EB5447 /* OBHttpCollect */,
+				71089CE52CF5BCC4AA5627EECEA07799 /* OBPageTrack */,
+			);
+			name = OBPerformance;
+			path = OBCollection/Classes/OBPerformance;
 			sourceTree = "<group>";
 		};
 		B454323C3A711A0DA29438F7203203CD /* OBTools */ = {
@@ -245,24 +248,13 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		C125D60C029709E4EC2D2285A769C73D /* OBPerformance */ = {
-			isa = PBXGroup;
-			children = (
-				40858D6A9BC75E74867266A95334F932 /* OBEntity */,
-				787F86830EE1CB3ED225E40E220AD2E8 /* OBHttpCollect */,
-				A1226E7E2EBB222C2F903504240007AC /* OBPageTrack */,
-			);
-			name = OBPerformance;
-			path = OBCollection/Classes/OBPerformance;
-			sourceTree = "<group>";
-		};
 		C5571EF56A3FE449536E7FD31D8A9564 /* OBCollection */ = {
 			isa = PBXGroup;
 			children = (
 				1D7F077FC0E6278B70E7D959BF1206A4 /* OBCollection.h */,
 				BD5B82AC97CC7F8B8E1219D9F3D960EE /* OBCollectionManager.h */,
 				E8EC61CE914FF921B0D70AD7A185DBF3 /* OBCollectionManager.m */,
-				C125D60C029709E4EC2D2285A769C73D /* OBPerformance */,
+				AE170DBE2DFD9637F0FE9D3F37795D51 /* OBPerformance */,
 				B454323C3A711A0DA29438F7203203CD /* OBTools */,
 				F650A0FF613C18CDEBC600BA4F8E718B /* Pod */,
 				A55F567F6622416327722ADD1D9E240F /* Support Files */,
@@ -285,6 +277,20 @@
 			);
 			name = "Pods-OBCollection_Tests";
 			path = "Target Support Files/Pods-OBCollection_Tests";
+			sourceTree = "<group>";
+		};
+		CCF19365DE34AD78638C60EECF39C541 /* OBEntity */ = {
+			isa = PBXGroup;
+			children = (
+				BF5F175E186E007C10A076D64F3B255C /* OBConfigSetting.h */,
+				3CBA94D41AADC5CF033B59A93440E850 /* OBConfigSetting.m */,
+				3F8F6E53F4AA0ACD3D08BA5172481811 /* OBData.h */,
+				878473B16A75BA9437E4836283965C6A /* OBData.m */,
+				1B15EF7DD74A88087DEDEA81B7C9C39A /* OBHttpData.h */,
+				AE96C8CDCE852855DAEC046DE84AA10E /* OBHttpData.m */,
+			);
+			name = OBEntity;
+			path = OBEntity;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -327,20 +333,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1C07FB96C38953E6B0A7F870FCF22885 /* Headers */ = {
+		4C1B19C61B39A3A196F73E68A9405B76 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C7282B98F42606734493206C4DA5148 /* NSDictionary+OBSafeDictionary.h in Headers */,
-				97F48ACE7DF49EE92BFC809F8398EAFC /* OBCollection-umbrella.h in Headers */,
-				E3A9586BD3551777B20C2BD3FF159523 /* OBCollection.h in Headers */,
-				EF35BE97CD0DDA96234EFF3343B3A105 /* OBCollectionManager.h in Headers */,
-				710D2959CA9615599971D290F51799BF /* OBConfigSetting.h in Headers */,
-				AA5932BA575674E8F0F65847DF6CE5F6 /* OBDataHelper.h in Headers */,
-				30EB219034F1931239F8D33AAEACE4F9 /* OBNSURLSessionCollect.h in Headers */,
-				F3416B274000649E3179DBD08723EC9B /* OBNSURLSessionCollectManager.h in Headers */,
-				2F8E9FBD458CA7ECB314993CF8C446AA /* OBPageTrackerCollect.h in Headers */,
-				66CD2DDDD766CD23ECE936F06DC6D706 /* OBUtils.h in Headers */,
+				0363135132C40D317A15ACC4C5D8358A /* NSDictionary+OBSafeDictionary.h in Headers */,
+				2CA6B1686CCA101167C471CF9F4F00B8 /* OBCollection-umbrella.h in Headers */,
+				C6B293ACA01A4303544ABA71434EB683 /* OBCollection.h in Headers */,
+				A2424E80954F4E57FFB9F0B5A68ED666 /* OBCollectionManager.h in Headers */,
+				B2D65A5465982AD42B0B6118F3FC8E5E /* OBConfigSetting.h in Headers */,
+				85E5A6B73B59994F95191C13ED9381FA /* OBData.h in Headers */,
+				AC8B0E38FFC0274498258B8430FF1118 /* OBHttpData.h in Headers */,
+				6122A8D2843B6BC74901C5B110288923 /* OBNSURLSessionCollect.h in Headers */,
+				E481F6309193359161C04C950CFB7015 /* OBNSURLSessionCollectManager.h in Headers */,
+				2BFCFF018F693803F77E0D950FCA998A /* OBPageTrackerCollect.h in Headers */,
+				97ABE97D844D123E9332705EBC9CA4FC /* OBUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,12 +364,12 @@
 /* Begin PBXNativeTarget section */
 		0D59C07FDBCD98362C4A7A2F44E43737 /* OBCollection */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88C534002B867294AD9164400CD7E6C2 /* Build configuration list for PBXNativeTarget "OBCollection" */;
+			buildConfigurationList = F6504866CC7241928FC2E5F6253DB3EE /* Build configuration list for PBXNativeTarget "OBCollection" */;
 			buildPhases = (
-				1C07FB96C38953E6B0A7F870FCF22885 /* Headers */,
-				79F889DEAA346D8FA13950134351DCDB /* Sources */,
-				3C715E878226A1036A83732C299F0698 /* Frameworks */,
-				DA754C72733CA65B58FCE0C8BF854723 /* Resources */,
+				4C1B19C61B39A3A196F73E68A9405B76 /* Headers */,
+				4BD36364E9CCE0F1E932EE7539A5577B /* Sources */,
+				2F95E16782E2DDD81ED2E4FF91A99526 /* Frameworks */,
+				85BDE4500F6F8C5F0DB5CC5A162D3A16 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -448,7 +455,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA754C72733CA65B58FCE0C8BF854723 /* Resources */ = {
+		85BDE4500F6F8C5F0DB5CC5A162D3A16 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -465,19 +472,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		79F889DEAA346D8FA13950134351DCDB /* Sources */ = {
+		4BD36364E9CCE0F1E932EE7539A5577B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				486E6893FA4A7C282779B28AA28FB7B3 /* NSDictionary+OBSafeDictionary.m in Sources */,
-				A46C0B78DB91895AA5FD380869BE19D9 /* OBCollection-dummy.m in Sources */,
-				037E8E00E57DE581A3FD078117AD3CD2 /* OBCollectionManager.m in Sources */,
-				307C05E4C6606D14CD58CB98FC81079C /* OBConfigSetting.m in Sources */,
-				1BC5191105A23CCD4FF1DA18495A27FE /* OBDataHelper.m in Sources */,
-				435DD071AB713FDA718BF5922DFE0BBE /* OBNSURLSessionCollect.m in Sources */,
-				1699F0ADF28993863E74261914E15254 /* OBNSURLSessionCollectManager.m in Sources */,
-				D38AC2558358AEC52258DD021E75EF80 /* OBPageTrackerCollect.m in Sources */,
-				F27D0E5E27685E21210074940E3F3495 /* OBUtils.m in Sources */,
+				FD1BA2D79579873802522DAFCBD3A315 /* NSDictionary+OBSafeDictionary.m in Sources */,
+				8E26942AB9B6894F46EF61EF959A0537 /* OBCollection-dummy.m in Sources */,
+				A8F521A1571EDCF66496EDB2495C04BC /* OBCollectionManager.m in Sources */,
+				CAD30CED86AA8861B8C9F8775E77A079 /* OBConfigSetting.m in Sources */,
+				882997E80B77D3225C9577A040E67667 /* OBData.m in Sources */,
+				290C1330D6C5024D7F6299A5E52D1DC6 /* OBHttpData.m in Sources */,
+				8D63490F223B56794C4B7ABE6341BE07 /* OBNSURLSessionCollect.m in Sources */,
+				4406351210D984F11123F79D2488BF1A /* OBNSURLSessionCollectManager.m in Sources */,
+				9777521DC6B03FCBCCCC014FD3AB1A52 /* OBPageTrackerCollect.m in Sources */,
+				C2B1A4FDACD4F5E6AABEA459D672C7B3 /* OBUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,7 +590,7 @@
 			};
 			name = Release;
 		};
-		57A99DE546AFA296A973D22C4A8ECABD /* Release */ = {
+		5F6A862C2C3ED3444EA8ACF378D575C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A89B48CEF22DB1527BE600F6BD012A5F /* OBCollection.release.xcconfig */;
 			buildSettings = {
@@ -805,7 +813,7 @@
 			};
 			name = Debug;
 		};
-		CA4E642075AA0F3425DD1202BB70D053 /* Debug */ = {
+		DBBDFD780C5DC5F35992633392DC28A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CC74BEF0392AF07AB7E770ADDAE32F5B /* OBCollection.debug.xcconfig */;
 			buildSettings = {
@@ -857,20 +865,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88C534002B867294AD9164400CD7E6C2 /* Build configuration list for PBXNativeTarget "OBCollection" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CA4E642075AA0F3425DD1202BB70D053 /* Debug */,
-				57A99DE546AFA296A973D22C4A8ECABD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		EDC79D05C5CE5559C5672A0A732C9A1A /* Build configuration list for PBXNativeTarget "Pods-OBCollection_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DBF8EE3B97FF52AC707CE68740653DC /* Debug */,
 				5008F23752EF8DBD0BC0F834D6E5744E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6504866CC7241928FC2E5F6253DB3EE /* Build configuration list for PBXNativeTarget "OBCollection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBBDFD780C5DC5F35992633392DC28A2 /* Debug */,
+				5F6A862C2C3ED3444EA8ACF378D575C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

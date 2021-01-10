@@ -9,6 +9,7 @@
 #import "OBUtils.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
+#import "OBNSURLSessionCollectManager.h"
 
 @interface OBNSURLSessionCollect()
 @property(nonatomic) BOOL hasCollected;
