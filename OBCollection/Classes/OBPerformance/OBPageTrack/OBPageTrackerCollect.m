@@ -42,8 +42,7 @@
             SEL originalSelector = NSSelectorFromString(@"viewDidLoad");
             SEL newSelector = [OBUtils makeNewSelectorFromSelector:originalSelector];
             
-            void (^swizzledBlock)(Class) = ^ void(Class cls)
-            {
+            void (^swizzledBlock)(Class) = ^ void(Class cls) {
                 NSString *clsName = NSStringFromClass([cls class]);
                 ((void (*)(id, SEL))objc_msgSend)(cls, newSelector);
                 if (weakself.isEnabled) {

@@ -40,8 +40,10 @@ static NSString *const kCellIdentifier = @"kCellIdentifier";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cls = self.dataArray[indexPath.row][@"class"];
+    NSDictionary *dic = self.dataArray[indexPath.row];
+    NSString *cls = dic[@"class"];
     UIViewController * vc = [[NSClassFromString(cls) alloc] init];
+    vc.title = dic[@"name"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
