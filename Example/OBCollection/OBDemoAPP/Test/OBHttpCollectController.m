@@ -27,6 +27,10 @@
     self.urlTextField.text = self.urlArray[index];
 }
 - (IBAction)sendRequestWithBlock:(UIButton *)sender {
+    if (!self.urlTextField.text.length) {
+        self.responseTextView.text = @"地址栏不能为空";
+        return;
+    }
     __weak typeof(self)weakself = self;
     NSURLSession *session = [NSURLSession sharedSession];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.urlTextField.text]];

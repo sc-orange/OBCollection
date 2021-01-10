@@ -8,7 +8,7 @@
 #import "OBData.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OBHttpData : OBData
+@interface OBHttpData : OBData<NSCopying>
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic, strong) NSDictionary *requestHead;
 @property (nonatomic, assign) NSInteger requestStartSeconds;

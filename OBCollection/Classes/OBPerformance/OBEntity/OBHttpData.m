@@ -31,4 +31,17 @@
     return time ? time : 0;
 }
 
+- (nonnull id)copyWithZone:(nullable NSZone *)zone {
+    OBHttpData *data = OBHttpData.alloc.init;
+    data.url = self.url;
+    data.requestHead = self.requestHead;
+    data.requestStartSeconds = self.requestStartSeconds;
+    data.requestStartTime = self.requestStartTime;
+    data.responseTime = self.responseTime;
+    data.responseSpacing = self.responseSpacing;
+    data.responseStatusCode = self.responseStatusCode;
+    data.responseHeader = self.responseHeader;
+    return data;
+}
+
 @end
