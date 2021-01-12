@@ -12,11 +12,10 @@
 #import <malloc/malloc.h>
 #import "OBCollectionManager.h"
 
-//创建一个遵循 NSURLSession 里的协议的类，并实现协议里的方法
-@interface URLSessionNewDelegate : NSObject<NSURLSessionDataDelegate,NSURLSessionTaskDelegate> {
+//创建一个遵循 NSURLSession 里的协议的类，并实现协议里的方法。（注意：要尽量实现 NSURLSession 里面代理方法，不然交换方法后这里不实现的代理方法外界也无法实现。目前只实现了3个常用的）
+@interface URLSessionNewDelegate : NSObject<NSURLSessionDataDelegate> {
     id _delegate;
 }
-
 @end
 
 @implementation URLSessionNewDelegate
@@ -35,27 +34,18 @@
 }
 
 #pragma mark - NSURLSession Delegate
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
+    if (_delegate && [_delegate respondsToSelector:@selector(URLSession:task:didCompleteWithError:)]) {
+        [_delegate URLSession:session dataTask:dataTask didReceiveData:data];
+    }
+}
+
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler {
-    OBHttpData *httpData = [[OBNSURLSessionCollectManager sharedInstance] getHttpDataWithTask:dataTask];
-    @synchronized (httpData) {
-        if(httpData) {
-            httpData.responseTime = [OBUtils currentTime];
-            httpData.responseSpacing = [httpData ob_responseTime];
-            
-            int statusCode = (int)[(NSHTTPURLResponse *)response statusCode];
-            httpData.responseStatusCode = [NSString stringWithFormat:@"%d", statusCode];
-            
-            NSDictionary *headers = [[(NSHTTPURLResponse *)response allHeaderFields] copy];
-            httpData.responseHeader = headers;
-        }
-        
-        //实现完协议方法后再调用外部实现协议的方法
-        if (_delegate && [_delegate respondsToSelector:@selector(URLSession:dataTask:didReceiveResponse:completionHandler:)]) {
-            [_delegate URLSession:session dataTask:dataTask didReceiveResponse:response completionHandler:completionHandler];
-        } else {
-            if (completionHandler) {
-                completionHandler(NSURLSessionResponseAllow);
-            }
+    if (_delegate && [_delegate respondsToSelector:@selector(URLSession:dataTask:didReceiveResponse:completionHandler:)]) {
+        [_delegate URLSession:session dataTask:dataTask didReceiveResponse:response completionHandler:completionHandler];
+    } else {
+        if (completionHandler) {
+            completionHandler(NSURLSessionResponseAllow);
         }
     }
 }
@@ -63,12 +53,19 @@
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
     OBHttpData *httpData = [[OBNSURLSessionCollectManager sharedInstance] getHttpDataWithTask:task];
     if(httpData) {
-        OBHttpData *newData = [OBHttpData copy];
+        OBHttpData *newData = [httpData copy];
         newData.responseTime = [OBUtils currentTime];
         newData.responseSpacing = [httpData ob_responseTime];
         
-        int statusCode = (int)[(NSHTTPURLResponse *)task.response statusCode];
-        httpData.responseStatusCode = [NSString stringWithFormat:@"%d", statusCode];
+        if([task.response isKindOfClass:[NSHTTPURLResponse class]]) {
+            NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
+            
+            int statusCode = (int)[response statusCode];
+            newData.responseStatusCode = [NSString stringWithFormat:@"%d", statusCode];
+            
+            NSDictionary *headers = [[response allHeaderFields] copy];
+            newData.responseHeader = headers;
+        }
         
         if (error) {
             [OBNSURLSessionCollectManager httpErrorWithError:error HttpInfo:newData];
@@ -78,6 +75,7 @@
     }
     [[OBNSURLSessionCollectManager sharedInstance] removeHttpDataWithTask:task];
     
+    //实现完协议方法后再调用外部实现协议的方法
     if (_delegate && [_delegate respondsToSelector:@selector(URLSession:task:didCompleteWithError:)]) {
         [_delegate URLSession:session task:task didCompleteWithError:error];
     }
@@ -129,11 +127,13 @@
                     newData.responseTime = [OBUtils currentTime];
                     newData.responseSpacing = [newData ob_responseTime];
 
-                    int statusCode = (int)[(NSHTTPURLResponse *)response statusCode];
-                    newData.responseStatusCode = [NSString stringWithFormat:@"%d", statusCode];
+                    if([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                        int statusCode = (int)[(NSHTTPURLResponse *)response statusCode];
+                        newData.responseStatusCode = [NSString stringWithFormat:@"%d", statusCode];
 
-                    NSDictionary *headers = [[(NSHTTPURLResponse *)response allHeaderFields] copy];
-                    newData.responseHeader = headers;
+                        NSDictionary *headers = [[(NSHTTPURLResponse *)response allHeaderFields] copy];
+                        newData.responseHeader = headers;
+                    }
 
                     if (error) {
                         [OBNSURLSessionCollectManager httpErrorWithError:error HttpInfo:newData];

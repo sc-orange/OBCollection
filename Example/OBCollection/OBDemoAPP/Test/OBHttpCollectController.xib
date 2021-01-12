@@ -50,6 +50,9 @@
                     <state key="normal" title="代理方式请求">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="sendRequestWithDelegate:" destination="-1" eventType="touchUpInside" id="Iib-bY-Xje"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzS-Nx-9vG">
                     <rect key="frame" x="104" y="88" width="79.5" height="38"/>
