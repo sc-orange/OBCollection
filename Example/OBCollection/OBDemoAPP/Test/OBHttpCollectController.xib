@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -18,11 +18,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zp-gs-ld1">
-                    <rect key="frame" x="16" y="74" width="382" height="38"/>
+                    <rect key="frame" x="16" y="30" width="343" height="38"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="SuF-yJ-q3T"/>
                     </constraints>
@@ -30,12 +30,12 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOt-Cu-oek">
-                    <rect key="frame" x="16" y="132" width="83.5" height="38"/>
+                    <rect key="frame" x="16" y="88" width="80" height="38"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="38" id="CK0-tO-AlT"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <state key="normal" title="获取随机URL">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -44,17 +44,17 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yF2-mB-A5F">
-                    <rect key="frame" x="314.5" y="132" width="83.5" height="38"/>
+                    <rect key="frame" x="279.5" y="88" width="79.5" height="38"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <state key="normal" title="代理方式请求">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzS-Nx-9vG">
-                    <rect key="frame" x="115.5" y="132" width="83.5" height="38"/>
+                    <rect key="frame" x="104" y="88" width="79.5" height="38"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <state key="normal" title="Block方式请求">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -63,16 +63,16 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LhY-cC-wfQ">
-                    <rect key="frame" x="16" y="200" width="382" height="646"/>
+                    <rect key="frame" x="16" y="156" width="343" height="495"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZ9-CP-cGK">
-                    <rect key="frame" x="215" y="132" width="83.5" height="38"/>
+                    <rect key="frame" x="191.5" y="88" width="80" height="38"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <state key="normal" title="http信息">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -89,7 +89,7 @@
                 <constraint firstItem="yF2-mB-A5F" firstAttribute="top" secondItem="AOt-Cu-oek" secondAttribute="top" id="4pz-YZ-5T8"/>
                 <constraint firstItem="LhY-cC-wfQ" firstAttribute="top" secondItem="AOt-Cu-oek" secondAttribute="bottom" constant="30" id="6XO-6r-ztQ"/>
                 <constraint firstItem="bzS-Nx-9vG" firstAttribute="width" secondItem="AOt-Cu-oek" secondAttribute="width" id="ALY-H5-Xir"/>
-                <constraint firstItem="bzS-Nx-9vG" firstAttribute="leading" secondItem="AOt-Cu-oek" secondAttribute="trailing" constant="16" id="ClL-w6-eGX"/>
+                <constraint firstItem="bzS-Nx-9vG" firstAttribute="leading" secondItem="AOt-Cu-oek" secondAttribute="trailing" constant="8" id="ClL-w6-eGX"/>
                 <constraint firstItem="yF2-mB-A5F" firstAttribute="width" secondItem="AOt-Cu-oek" secondAttribute="width" id="EWL-6x-TXM"/>
                 <constraint firstItem="AOt-Cu-oek" firstAttribute="leading" secondItem="6zp-gs-ld1" secondAttribute="leading" id="HSx-MS-LxH"/>
                 <constraint firstItem="AOt-Cu-oek" firstAttribute="top" secondItem="6zp-gs-ld1" secondAttribute="bottom" constant="20" id="Jab-o5-Fx5"/>
@@ -102,9 +102,9 @@
                 <constraint firstItem="yF2-mB-A5F" firstAttribute="bottom" secondItem="AOt-Cu-oek" secondAttribute="bottom" id="enU-wL-dEF"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="6zp-gs-ld1" secondAttribute="trailing" constant="16" id="gcg-EY-HWG"/>
                 <constraint firstItem="iZ9-CP-cGK" firstAttribute="bottom" secondItem="AOt-Cu-oek" secondAttribute="bottom" id="gnC-Ma-cCV"/>
-                <constraint firstItem="iZ9-CP-cGK" firstAttribute="leading" secondItem="bzS-Nx-9vG" secondAttribute="trailing" constant="16" id="iUb-bt-TaO"/>
+                <constraint firstItem="iZ9-CP-cGK" firstAttribute="leading" secondItem="bzS-Nx-9vG" secondAttribute="trailing" constant="8" id="iUb-bt-TaO"/>
                 <constraint firstItem="6zp-gs-ld1" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="qu7-JC-h3i"/>
-                <constraint firstItem="yF2-mB-A5F" firstAttribute="leading" secondItem="iZ9-CP-cGK" secondAttribute="trailing" constant="16" id="ueX-cL-1tL"/>
+                <constraint firstItem="yF2-mB-A5F" firstAttribute="leading" secondItem="iZ9-CP-cGK" secondAttribute="trailing" constant="8" id="ueX-cL-1tL"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="LhY-cC-wfQ" secondAttribute="trailing" constant="16" id="zQl-Ad-2ql"/>
             </constraints>
             <point key="canvasLocation" x="139" y="88"/>
