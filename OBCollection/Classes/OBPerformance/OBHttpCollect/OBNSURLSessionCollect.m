@@ -12,10 +12,84 @@
 #import <malloc/malloc.h>
 #import "OBCollectionManager.h"
 
+//创建一个遵循 NSURLSession 里的协议的类，并实现协议里的方法
+@interface URLSessionNewDelegate : NSObject<NSURLSessionDataDelegate,NSURLSessionTaskDelegate> {
+    id _delegate;
+}
+
+@end
+
+@implementation URLSessionNewDelegate
+
+- (id)initWithDelegate:(id)delegate {
+    if (self = [super init]) {
+        if (delegate) {
+            _delegate = delegate;
+        }
+    }
+    return self;
+}
+
+- (void)dealloc {
+    _delegate = nil;
+}
+
+#pragma mark - NSURLSession Delegate
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler {
+    OBHttpData *httpData = [[OBNSURLSessionCollectManager sharedInstance] getHttpDataWithTask:dataTask];
+    @synchronized (httpData) {
+        if(httpData) {
+            httpData.responseTime = [OBUtils currentTime];
+            httpData.responseSpacing = [httpData ob_responseTime];
+            
+            int statusCode = (int)[(NSHTTPURLResponse *)response statusCode];
+            httpData.responseStatusCode = [NSString stringWithFormat:@"%d", statusCode];
+            
+            NSDictionary *headers = [[(NSHTTPURLResponse *)response allHeaderFields] copy];
+            httpData.responseHeader = headers;
+        }
+        
+        //实现完协议方法后再调用外部实现协议的方法
+        if (_delegate && [_delegate respondsToSelector:@selector(URLSession:dataTask:didReceiveResponse:completionHandler:)]) {
+            [_delegate URLSession:session dataTask:dataTask didReceiveResponse:response completionHandler:completionHandler];
+        } else {
+            if (completionHandler) {
+                completionHandler(NSURLSessionResponseAllow);
+            }
+        }
+    }
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
+    OBHttpData *httpData = [[OBNSURLSessionCollectManager sharedInstance] getHttpDataWithTask:task];
+    if(httpData) {
+        OBHttpData *newData = [OBHttpData copy];
+        newData.responseTime = [OBUtils currentTime];
+        newData.responseSpacing = [httpData ob_responseTime];
+        
+        int statusCode = (int)[(NSHTTPURLResponse *)task.response statusCode];
+        httpData.responseStatusCode = [NSString stringWithFormat:@"%d", statusCode];
+        
+        if (error) {
+            [OBNSURLSessionCollectManager httpErrorWithError:error HttpInfo:newData];
+        }
+        //http采集
+        [[OBCollectionManager sharedInstance] addCollectionData:newData];
+    }
+    [[OBNSURLSessionCollectManager sharedInstance] removeHttpDataWithTask:task];
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(URLSession:task:didCompleteWithError:)]) {
+        [_delegate URLSession:session task:task didCompleteWithError:error];
+    }
+}
+
+
+@end
+
 #pragma mark - NSURLSession
 @interface NSURLSession (OBNSURLSessionCollect)
 
-//+ (NSURLSession *)newSessionWithConfiguration:(NSURLSessionConfiguration *)configuration delegate:(id<NSURLSessionDelegate>)delegate delegateQueue:(NSOperationQueue *)queue;
++ (NSURLSession *)newSessionWithConfiguration:(NSURLSessionConfiguration *)configuration delegate:(id<NSURLSessionDelegate>)delegate delegateQueue:(NSOperationQueue *)queue;
 
 - (NSURLSessionDataTask *)newSessionDataTaskWithRequest:(NSURLRequest *)request;
 
@@ -25,9 +99,10 @@
 
 @implementation NSURLSession (OBNSURLSessionCollect)
 
-//+ (NSURLSession *)newSessionWithConfiguration:(NSURLSessionConfiguration *)configuration delegate:(id<NSURLSessionDelegate>)delegate delegateQueue:(NSOperationQueue *)queue {
-//    re
-//}
++ (NSURLSession *)newSessionWithConfiguration:(NSURLSessionConfiguration *)configuration delegate:(id<NSURLSessionDelegate>)delegate delegateQueue:(NSOperationQueue *)queue {
+    URLSessionNewDelegate *newDelegate = [[URLSessionNewDelegate alloc] initWithDelegate:delegate];
+    return [self newSessionWithConfiguration:configuration delegate:newDelegate delegateQueue:queue];
+}
 
 - (NSURLSessionDataTask *)newSessionDataTaskWithRequest:(NSURLRequest *)request {
     NSURLRequest *req = [self handleRequest:request];
@@ -66,9 +141,8 @@
 
                     //http采集
                     [[OBCollectionManager sharedInstance] addCollectionData:newData];
-
-                    [[OBNSURLSessionCollectManager sharedInstance] removeHttpDataWithTask:dataTask];
                 }
+                [[OBNSURLSessionCollectManager sharedInstance] removeHttpDataWithTask:dataTask];
             }
 
             [[OBNSURLSessionCollectManager sharedInstance] removeTaskWithAdress:address];
@@ -111,7 +185,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.original_Session = class_getClassMethod(NSClassFromString(@"NSURLSession"), @selector(sessionWithConfiguration:delegate:delegateQueue:));
-//        self.new_Session = class_getClassMethod(NSClassFromString(@"NSURLSession"), @selector(newSessionWithConfiguration:delegate:delegateQueue:));
+        self.new_Session = class_getClassMethod(NSClassFromString(@"NSURLSession"), @selector(newSessionWithConfiguration:delegate:delegateQueue:));
 
         self.original_DataTaskWithRequest = class_getInstanceMethod(NSClassFromString(@"NSURLSession"), @selector(dataTaskWithRequest:));
         self.new_DataTaskWithRequest = class_getInstanceMethod(NSClassFromString(@"NSURLSession"), @selector(newSessionDataTaskWithRequest:));
