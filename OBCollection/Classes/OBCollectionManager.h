@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "OBData.h"
+#import "OBHttpData.h"
 #import "OBConfigSetting.h"
 #import "OBPageTrackerCollect.h"
 #import "OBNSURLSessionCollect.h"
@@ -24,6 +25,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) OBPageTrackerCollect *pageTrackerCollect;
 //http采集类
 @property (nonatomic, strong) OBNSURLSessionCollect *httpCollect;
+
+
+//HTTP
+@property (nonatomic, strong) NSMutableArray<OBHttpData *> *httpDataArray;
+@property (nonatomic, strong) NSMutableArray<OBHttpData *> *httpErrorDataArray;
+
+
+
+
 
 //打开关闭数据采集
 - (void)startCollect;

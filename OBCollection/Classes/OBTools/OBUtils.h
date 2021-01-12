@@ -9,6 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define StringValid(x) (x != NULL && [x length] > 0)
+
 @interface OBUtils : NSObject
 //生成新的SEL
 + (SEL)makeNewSelectorFromSelector:(SEL)selector;
@@ -20,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSInteger)currentSeconds;
 //获取当前时间
 + (NSString *)currentTime;
+//字典转json
++ (NSString *)dictionaryToString:(NSDictionary *)dic;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -31,6 +31,25 @@
     return time ? time : 0;
 }
 
+- (NSString *)description {
+    NSMutableString *dataString = [NSMutableString stringWithFormat:@""];
+    if ([self.url containsString:@"|"]) {
+        self.url = [NSString stringWithString:[self.url stringByReplacingOccurrencesOfString:@"|" withString:@"?"]];
+    }
+    [self appendString:[NSString stringWithFormat:@"请求url:%@",self.url] To:dataString];
+    [self appendString:[NSString stringWithFormat:@"请求头:%@",[OBUtils dictionaryToString:self.requestHead]] To:dataString];
+    [self appendString:[NSString stringWithFormat:@"请求开始时间:%@",self.requestStartTime] To:dataString];
+    [self appendString:[NSString stringWithFormat:@"请求响应时间:%@",self.responseTime] To:dataString];
+    [self appendString:[NSString stringWithFormat:@"响应间隔:%ld",(long)self.responseSpacing] To:dataString];
+    [self appendString:[NSString stringWithFormat:@"状态码:%@",self.responseStatusCode] To:dataString];
+    [self appendString:[NSString stringWithFormat:@"响应头:%@",[OBUtils dictionaryToString:self.responseHeader]] To:dataString];
+    
+    if (StringValid(self.errorMsg)) {
+        [self appendString:[NSString stringWithFormat:@"错误信息:%@",self.errorMsg] To:dataString];
+    }
+    return dataString;
+}
+
 - (nonnull id)copyWithZone:(nullable NSZone *)zone {
     OBHttpData *data = OBHttpData.alloc.init;
     data.url = self.url;
@@ -41,6 +60,8 @@
     data.responseSpacing = self.responseSpacing;
     data.responseStatusCode = self.responseStatusCode;
     data.responseHeader = self.responseHeader;
+    
+    data.errorMsg = self.errorMsg;
     return data;
 }
 

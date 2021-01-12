@@ -41,4 +41,17 @@
     return [self timeFromDate:[NSDate date]];
 }
 
++ (NSString *)dictionaryToString:(NSDictionary *)dic {
+    NSString *jsonString = nil;
+    if (!dic) {
+        return jsonString;
+    }
+    NSError *error;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&error];
+    if (data) {
+        jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    }
+    return jsonString;
+}
+
 @end

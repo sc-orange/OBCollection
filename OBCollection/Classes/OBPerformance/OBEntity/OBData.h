@@ -11,6 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OBData : NSObject
 
+- (NSString *)description;
+
+- (void)appendString:(NSString *)string To:(NSMutableString *)muString;
+- (void)appendIntger:(NSInteger)intger To:(NSMutableString *)muString;
 
 @end
 

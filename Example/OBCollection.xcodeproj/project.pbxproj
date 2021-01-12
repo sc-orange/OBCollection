@@ -308,6 +308,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "200887744@qq.com";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 7AU934CY49;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -564,6 +567,7 @@
 			baseConfigurationReference = 5E6BDE14EDDBD1D7977DE708 /* Pods-OBCollection_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7AU934CY49;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OBCollection/OBCollection-Prefix.pch";
 				INFOPLIST_FILE = "OBCollection/OBCollection-Info.plist";
@@ -580,6 +584,7 @@
 			baseConfigurationReference = E6F208F4BBE603C7E086CCEE /* Pods-OBCollection_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7AU934CY49;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OBCollection/OBCollection-Prefix.pch";
 				INFOPLIST_FILE = "OBCollection/OBCollection-Info.plist";

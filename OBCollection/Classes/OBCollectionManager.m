@@ -8,13 +8,10 @@
 #import "OBCollectionManager.h"
 #import "OBConfigSetting.h"
 #import "NSDictionary+OBSafeDictionary.h"
-#import "OBHttpData.h"
 
 @interface OBCollectionManager()
 
 @property (nonatomic, strong) dispatch_queue_t addQueue;
-//HTTP
-@property (nonatomic, strong) NSMutableArray<OBHttpData *> *httpDataArray;
 
 @end
 
@@ -38,6 +35,7 @@ static OBCollectionManager *collectionManager = nil;
         self.httpCollect = [[OBNSURLSessionCollect alloc] init];
         
         self.httpDataArray = [NSMutableArray array];
+        self.httpErrorDataArray = [NSMutableArray array];
         
     }
     return self;
@@ -79,13 +77,28 @@ static OBCollectionManager *collectionManager = nil;
     __weak typeof(self)weakself = self;
     if(self.addQueue && data) {
         dispatch_async(self.addQueue, ^{
+            NSInteger dataCount = 0; //当前数据数量
+            NSInteger maxCount = 50; //最大存储数量
+            
             if([data isKindOfClass:[OBHttpData class]]) {
-                if(weakself.httpDataArray) {
-                    [weakself.httpDataArray addObject:(OBHttpData*)data];
+                OBHttpData *httpData = (OBHttpData *)data;
+                NSInteger statusCode = httpData.responseStatusCode.integerValue;
+                BOOL isError = (statusCode >= 400 ||statusCode < 200);
+                
+                
+                if (isError) {
+                    if (weakself.httpErrorDataArray) {
+                        [weakself.httpErrorDataArray addObject:httpData];
+                        dataCount = weakself.httpErrorDataArray.count;
+                    }
                 }
+                
+                if(weakself.httpDataArray) {
+                    [weakself.httpDataArray addObject:httpData];
+                    dataCount = weakself.httpDataArray.count;
+                }
+                [OBLog print:@"http请求:\n%@",[data description]];
             }
-            int dataCount = 0; //当前数据数量
-            int maxCount = 50; //最大存储数量
             
             if(dataCount >= maxCount) {
                 [OBLog print:@"达到最大数量处理数据....."];

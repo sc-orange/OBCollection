@@ -7,6 +7,7 @@
 //
 
 #import "OBHttpCollectController.h"
+#import <OBCollection/OBCollection.h>
 
 @interface OBHttpCollectController ()
 @property (nonatomic, strong)NSArray *urlArray;
@@ -47,6 +48,11 @@
         });
     }];
     [task resume];
+}
+
+- (IBAction)getHttpData:(UIButton *)sender {
+    OBHttpData *httpData = [OBCollectionManager sharedInstance].httpDataArray.lastObject;
+    self.responseTextView.text = [httpData description];
 }
 
 - (NSArray *)urlArray {
