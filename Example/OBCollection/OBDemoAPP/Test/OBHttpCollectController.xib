@@ -43,17 +43,6 @@
                         <action selector="getUrl:" destination="-1" eventType="touchUpInside" id="Ehw-xl-cnI"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yF2-mB-A5F">
-                    <rect key="frame" x="279.5" y="88" width="79.5" height="38"/>
-                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <state key="normal" title="代理方式请求">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="sendRequestWithDelegate:" destination="-1" eventType="touchUpInside" id="Iib-bY-Xje"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzS-Nx-9vG">
                     <rect key="frame" x="104" y="88" width="79.5" height="38"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -73,7 +62,7 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZ9-CP-cGK">
-                    <rect key="frame" x="191.5" y="88" width="80" height="38"/>
+                    <rect key="frame" x="279.5" y="88" width="79.5" height="38"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <state key="normal" title="http信息">
@@ -83,11 +72,23 @@
                         <action selector="getHttpData:" destination="-1" eventType="touchUpInside" id="ivX-Ly-cjR"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yF2-mB-A5F">
+                    <rect key="frame" x="191.5" y="88" width="80" height="38"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <state key="normal" title="代理方式请求">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="sendRequestWithDelegate:" destination="-1" eventType="touchUpInside" id="Iib-bY-Xje"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="iZ9-CP-cGK" firstAttribute="top" secondItem="AOt-Cu-oek" secondAttribute="top" id="0GN-Fl-t63"/>
+                <constraint firstItem="yF2-mB-A5F" firstAttribute="leading" secondItem="bzS-Nx-9vG" secondAttribute="trailing" constant="8" id="3IT-A2-lBt"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="LhY-cC-wfQ" secondAttribute="bottom" constant="16" id="3WJ-vW-yvd"/>
                 <constraint firstItem="yF2-mB-A5F" firstAttribute="top" secondItem="AOt-Cu-oek" secondAttribute="top" id="4pz-YZ-5T8"/>
                 <constraint firstItem="LhY-cC-wfQ" firstAttribute="top" secondItem="AOt-Cu-oek" secondAttribute="bottom" constant="30" id="6XO-6r-ztQ"/>
@@ -96,18 +97,17 @@
                 <constraint firstItem="yF2-mB-A5F" firstAttribute="width" secondItem="AOt-Cu-oek" secondAttribute="width" id="EWL-6x-TXM"/>
                 <constraint firstItem="AOt-Cu-oek" firstAttribute="leading" secondItem="6zp-gs-ld1" secondAttribute="leading" id="HSx-MS-LxH"/>
                 <constraint firstItem="AOt-Cu-oek" firstAttribute="top" secondItem="6zp-gs-ld1" secondAttribute="bottom" constant="20" id="Jab-o5-Fx5"/>
+                <constraint firstItem="iZ9-CP-cGK" firstAttribute="trailing" secondItem="6zp-gs-ld1" secondAttribute="trailing" id="Jme-50-KbN"/>
                 <constraint firstItem="6zp-gs-ld1" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="30" id="KyU-mY-2fz"/>
                 <constraint firstItem="bzS-Nx-9vG" firstAttribute="bottom" secondItem="AOt-Cu-oek" secondAttribute="bottom" id="R9D-7c-9EP"/>
                 <constraint firstItem="LhY-cC-wfQ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="SYV-er-3BW"/>
-                <constraint firstItem="yF2-mB-A5F" firstAttribute="trailing" secondItem="6zp-gs-ld1" secondAttribute="trailing" id="a9z-Ik-McR"/>
+                <constraint firstItem="iZ9-CP-cGK" firstAttribute="leading" secondItem="yF2-mB-A5F" secondAttribute="trailing" constant="8" id="U7Q-EW-u2Z"/>
                 <constraint firstItem="iZ9-CP-cGK" firstAttribute="width" secondItem="AOt-Cu-oek" secondAttribute="width" id="bRn-96-vU5"/>
                 <constraint firstItem="bzS-Nx-9vG" firstAttribute="top" secondItem="AOt-Cu-oek" secondAttribute="top" id="bzZ-18-OwS"/>
                 <constraint firstItem="yF2-mB-A5F" firstAttribute="bottom" secondItem="AOt-Cu-oek" secondAttribute="bottom" id="enU-wL-dEF"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="6zp-gs-ld1" secondAttribute="trailing" constant="16" id="gcg-EY-HWG"/>
                 <constraint firstItem="iZ9-CP-cGK" firstAttribute="bottom" secondItem="AOt-Cu-oek" secondAttribute="bottom" id="gnC-Ma-cCV"/>
-                <constraint firstItem="iZ9-CP-cGK" firstAttribute="leading" secondItem="bzS-Nx-9vG" secondAttribute="trailing" constant="8" id="iUb-bt-TaO"/>
                 <constraint firstItem="6zp-gs-ld1" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="qu7-JC-h3i"/>
-                <constraint firstItem="yF2-mB-A5F" firstAttribute="leading" secondItem="iZ9-CP-cGK" secondAttribute="trailing" constant="8" id="ueX-cL-1tL"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="LhY-cC-wfQ" secondAttribute="trailing" constant="16" id="zQl-Ad-2ql"/>
             </constraints>
             <point key="canvasLocation" x="139" y="88"/>
