@@ -11,7 +11,7 @@
 #import "OBConfigSetting.h"
 #import "OBPageTrackerCollect.h"
 #import "OBNSURLSessionCollect.h"
-
+#import "OBCrashCollect.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

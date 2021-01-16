@@ -47,6 +47,8 @@ static OBCollectionManager *collectionManager = nil;
     [self makeSettingWith:setting];
     
     self.addQueue = dispatch_queue_create("add_queue", DISPATCH_QUEUE_SERIAL);
+    
+    [[OBCrashCollect sharedInstance] readCresh];
 }
 
 - (void)makeSettingWith:(NSDictionary *)setting {

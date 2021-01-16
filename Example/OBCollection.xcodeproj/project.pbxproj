@@ -24,6 +24,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		C26CA7DB25B29A16002B7826 /* OBCrashCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26CA7D925B29A16002B7826 /* OBCrashCollectController.m */; };
+		C26CA7DC25B29A16002B7826 /* OBCrashCollectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26CA7DA25B29A16002B7826 /* OBCrashCollectController.xib */; };
 		C278F10C25AB3B8E004DDAC9 /* OBPageCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = C278F10A25AB3B8E004DDAC9 /* OBPageCollectController.m */; };
 		C278F10D25AB3B8E004DDAC9 /* OBPageCollectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C278F10B25AB3B8E004DDAC9 /* OBPageCollectController.xib */; };
 		C278F12525AB3FFB004DDAC9 /* OBHttpCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = C278F12325AB3FFB004DDAC9 /* OBHttpCollectController.m */; };
@@ -73,6 +75,9 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A671D33E08D31B1A48366AD2 /* Pods_OBCollection_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBCollection_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A6011C4B186D1A1002CA8B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C26CA7D825B29A16002B7826 /* OBCrashCollectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCrashCollectController.h; sourceTree = "<group>"; };
+		C26CA7D925B29A16002B7826 /* OBCrashCollectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCrashCollectController.m; sourceTree = "<group>"; };
+		C26CA7DA25B29A16002B7826 /* OBCrashCollectController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OBCrashCollectController.xib; sourceTree = "<group>"; };
 		C278F10925AB3B8E004DDAC9 /* OBPageCollectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBPageCollectController.h; sourceTree = "<group>"; };
 		C278F10A25AB3B8E004DDAC9 /* OBPageCollectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBPageCollectController.m; sourceTree = "<group>"; };
 		C278F10B25AB3B8E004DDAC9 /* OBPageCollectController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OBPageCollectController.xib; sourceTree = "<group>"; };
@@ -242,6 +247,9 @@
 				C278F12225AB3FFB004DDAC9 /* OBHttpCollectController.h */,
 				C278F12325AB3FFB004DDAC9 /* OBHttpCollectController.m */,
 				C278F12425AB3FFB004DDAC9 /* OBHttpCollectController.xib */,
+				C26CA7D825B29A16002B7826 /* OBCrashCollectController.h */,
+				C26CA7D925B29A16002B7826 /* OBCrashCollectController.m */,
+				C26CA7DA25B29A16002B7826 /* OBCrashCollectController.xib */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -309,7 +317,7 @@
 				ORGANIZATIONNAME = "200887744@qq.com";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = 7AU934CY49;
+						DevelopmentTeam = 2PAD966A4F;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -347,6 +355,7 @@
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				C2EA041F25A9F3AE006F9B22 /* TestController.xib in Resources */,
 				C2EA041D25A9F3AE006F9B22 /* HomeController.xib in Resources */,
+				C26CA7DC25B29A16002B7826 /* OBCrashCollectController.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				C278F12625AB3FFB004DDAC9 /* OBHttpCollectController.xib in Resources */,
 			);
@@ -436,6 +445,7 @@
 			files = (
 				C2EA041025A9F3A5006F9B22 /* OBTabBarController.m in Sources */,
 				C2EA041E25A9F3AE006F9B22 /* TestController.m in Sources */,
+				C26CA7DB25B29A16002B7826 /* OBCrashCollectController.m in Sources */,
 				6003F59E195388D20070C39A /* OBAppDelegate.m in Sources */,
 				C278F10C25AB3B8E004DDAC9 /* OBPageCollectController.m in Sources */,
 				6003F5A7195388D20070C39A /* OBViewController.m in Sources */,
@@ -569,12 +579,12 @@
 			baseConfigurationReference = 5E6BDE14EDDBD1D7977DE708 /* Pods-OBCollection_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7AU934CY49;
+				DEVELOPMENT_TEAM = 2PAD966A4F;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OBCollection/OBCollection-Prefix.pch";
 				INFOPLIST_FILE = "OBCollection/OBCollection-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "demo.OBCollection-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
@@ -586,12 +596,12 @@
 			baseConfigurationReference = E6F208F4BBE603C7E086CCEE /* Pods-OBCollection_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7AU934CY49;
+				DEVELOPMENT_TEAM = 2PAD966A4F;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OBCollection/OBCollection-Prefix.pch";
 				INFOPLIST_FILE = "OBCollection/OBCollection-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "demo.OBCollection-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;

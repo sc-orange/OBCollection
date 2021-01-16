@@ -12,6 +12,7 @@
 
 #import "OBCollection.h"
 #import "OBCollectionManager.h"
+#import "OBCrashCollect.h"
 #import "OBConfigSetting.h"
 #import "OBData.h"
 #import "OBHttpData.h"

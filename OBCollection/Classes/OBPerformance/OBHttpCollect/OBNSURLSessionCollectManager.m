@@ -7,7 +7,7 @@
 
 #import "OBNSURLSessionCollectManager.h"
 
-static OBNSURLSessionCollectManager *manager = nil;
+static OBNSURLSessionCollectManager *_manager = nil;
 
 @interface OBNSURLSessionCollectManager()
 @property (nonatomic, strong) NSMutableDictionary<NSNumber *, OBHttpData *> *httpDataDict;
@@ -19,9 +19,9 @@ static OBNSURLSessionCollectManager *manager = nil;
 + (OBNSURLSessionCollectManager *)sharedInstance {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [[OBNSURLSessionCollectManager alloc] init];
+        _manager = [[OBNSURLSessionCollectManager alloc] init];
     });
-    return manager;
+    return _manager;
 }
 
 - (instancetype)init {
