@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "OBCollection/Classes/**/*"
+  "source_files": "OBCollection/Classes/**/*",
+  "dependencies": {
+    "KSCrash": [
+      "1.15.21"
+    ]
+  }
 }

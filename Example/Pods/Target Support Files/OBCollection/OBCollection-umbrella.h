@@ -19,6 +19,7 @@
 #import "OBNSURLSessionCollectManager.h"
 #import "OBPageTrackerCollect.h"
 #import "NSDictionary+OBSafeDictionary.h"
+#import "OBLog.h"
 #import "OBUtils.h"
 
 FOUNDATION_EXPORT double OBCollectionVersionNumber;
