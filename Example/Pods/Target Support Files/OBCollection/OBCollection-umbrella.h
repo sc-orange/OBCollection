@@ -14,6 +14,7 @@
 #import "OBCollectionManager.h"
 #import "OBCrashCollect.h"
 #import "OBConfigSetting.h"
+#import "OBCrashData.h"
 #import "OBData.h"
 #import "OBHttpData.h"
 #import "OBNSURLSessionCollect.h"

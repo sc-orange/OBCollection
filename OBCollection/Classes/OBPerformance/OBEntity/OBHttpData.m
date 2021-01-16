@@ -9,8 +9,7 @@
 
 @implementation OBHttpData
 
-- (instancetype)init
-{
+- (instancetype)init {
     if (self = [super init]) {
         self.url = @"";
         self.requestHead = [NSDictionary dictionary];

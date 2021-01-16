@@ -6,9 +6,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OBConfigSetting.h"
 #import "OBData.h"
 #import "OBHttpData.h"
-#import "OBConfigSetting.h"
+#import "OBCrashData.h"
 #import "OBPageTrackerCollect.h"
 #import "OBNSURLSessionCollect.h"
 #import "OBCrashCollect.h"
@@ -25,12 +26,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) OBPageTrackerCollect *pageTrackerCollect;
 //http采集类
 @property (nonatomic, strong) OBNSURLSessionCollect *httpCollect;
+//Crash采集类
+@property (nonatomic, strong) OBCrashCollect *crashCollect;
 
 
 //HTTP
 @property (nonatomic, strong) NSMutableArray<OBHttpData *> *httpDataArray;
 @property (nonatomic, strong) NSMutableArray<OBHttpData *> *httpErrorDataArray;
-
+//Crash
+@property (nonatomic, strong) OBCrashData *crashData;
 
 
 
