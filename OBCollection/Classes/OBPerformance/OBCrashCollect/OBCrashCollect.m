@@ -8,6 +8,9 @@
 #import "OBCrashCollect.h"
 #import <KSCrash/KSCrash.h>
 #import <KSCrash/KSCrashReportFilterAppleFmt.h>
+#import "OBCrashData.h"
+#import "NSString+OBDateFormat.h"
+#import "NSDictionary+OBSafeDictionary.h"
 
 static OBCrashCollect *_manager = nil;
 
@@ -42,9 +45,28 @@ static OBCrashCollect *_manager = nil;
     [filterAppleFmt filterReports:@[report] onCompletion:^(NSArray *filteredReports, BOOL completed, NSError *error) {
         if (completed && !error) {
             NSString *result = [filteredReports firstObject];
-            if (result) {
-                NSLog(@"%@", result);
+            if (!StringValid(result)) {
+                return;
             }
+            OBCrashData *crashData = OBCrashData.alloc.init;
+            crashData.crashInfo = result;
+            NSString *crashTime = [[report dictionaryForKey:@"report"] stringForKey:@"timestamp"];
+            crashData.crashTime = [crashTime dateStringToFormat:@""];
+            NSDictionary *systemInfoDic = [report dictionaryForKey:@"system"];
+            crashData.appVersion = [systemInfoDic stringForKey:@"CFBundleShortVersionString"];
+            NSString *appStartTime = [systemInfoDic stringForKey:@"app_start_time"];
+            crashData.appStartTime = [appStartTime dateStringToFormat:@""];
+            NSDictionary *memoryDic = [systemInfoDic dictionaryForKey:@"memory"];
+            NSInteger memorySize = [memoryDic integerForKey:@"size"];
+            crashData.memorySize = [NSString stringWithFormat:@"%ld",memorySize];
+            NSInteger freeMemorySize = [memoryDic integerForKey:@"free"];
+            crashData.freeMemorySize = [NSString stringWithFormat:@"%ld",freeMemorySize];
+            NSString *machine = [systemInfoDic stringForKey:@"machine"];
+            crashData.deviceName = [OBUtils deviceNameWithMachine:machine];
+            crashData.systemVersion = [systemInfoDic stringForKey:@"system_version"];
+            
+//            crashData.pageTrack = [];
+            
             //删除crash库中所有的信息
             [reporter deleteAllReports];
         }

@@ -17,13 +17,15 @@ NS_ASSUME_NONNULL_BEGIN
 //交换方法
 + (void)replaceSelector:(SEL)originalSelector onClass:(Class)class withBlock:(id)block newSelector:(SEL)newSelector;
 //date转string
-+ (NSString *)timeFromDate:(NSDate *)date;
++ (NSString *)timeFromDate:(NSDate *)date Format:(NSString *)format;
 //获取当前时间戳
 + (NSInteger)currentSeconds;
 //获取当前时间
 + (NSString *)currentTime;
 //字典转json
 + (NSString *)dictionaryToString:(NSDictionary *)dic;
+
++ (NSString *)deviceNameWithMachine:(NSString *)machine;
 @end
 
 NS_ASSUME_NONNULL_END
