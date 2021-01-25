@@ -7,6 +7,7 @@
 //
 
 #import "OBCrashCollectController.h"
+#import <OBCollection/OBCollection.h>
 
 @interface OBCrashCollectController ()
 @property (weak, nonatomic) IBOutlet UITextView *crashInfoTextView;
@@ -17,11 +18,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 - (IBAction)crashAction:(UIButton *)sender {
     NSArray *array = @[@1, @2];
     NSLog(@"%@", array[3]);
+}
+- (IBAction)crashInfo:(UIButton *)sender {
+    OBCrashData *data = [OBCollectionManager sharedInstance].crashData;
+    self.crashInfoTextView.text = data ? data.crashInfo : @"暂无崩溃信息";
+}
+- (IBAction)crashExtInfo:(UIButton *)sender {
+    OBCrashData *data = [OBCollectionManager sharedInstance].crashData;
+    self.crashInfoTextView.text = data ? [data description] : @"暂无崩溃信息";
 }
 
 @end

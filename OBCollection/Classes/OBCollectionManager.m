@@ -31,9 +31,12 @@ static OBCollectionManager *collectionManager = nil;
     self = [super init];
     if(self) {
         self.configSetting = [[OBConfigSetting alloc] init];
+        //采集类
+        self.crashCollect = [OBCrashCollect sharedInstance];
         self.pageTrackerCollect = [[OBPageTrackerCollect alloc] init];
         self.httpCollect = [[OBNSURLSessionCollect alloc] init];
-        
+        //采集保存数据类
+        self.crashData = [[OBCrashData alloc] init];
         self.httpDataArray = [NSMutableArray array];
         self.httpErrorDataArray = [NSMutableArray array];
         
@@ -47,12 +50,20 @@ static OBCollectionManager *collectionManager = nil;
     [self makeSettingWith:setting];
     
     self.addQueue = dispatch_queue_create("add_queue", DISPATCH_QUEUE_SERIAL);
-    
-    [[OBCrashCollect sharedInstance] readCresh];
+    //读取SDK崩溃信息
+    __weak typeof(self)weakSelf = self;
+    [[OBCrashCollect sharedInstance] readCreshData:^(OBCrashData * _Nonnull crashData) {
+        weakSelf.crashData = crashData;
+    }];
 }
 
 - (void)makeSettingWith:(NSDictionary *)setting {
     [self.configSetting setConfigSetting:setting];
+    if (self.configSetting.crashSwitch) {
+        [self.crashCollect startCollect];
+    }else {
+        [self.crashCollect stopCollect];
+    }
     self.pageTrackerCollect.isEnabled = self.configSetting.pageTrackSwitch;
     if (self.configSetting.httpSwitch) {
         [self.httpCollect startCollect];
@@ -76,7 +87,7 @@ static OBCollectionManager *collectionManager = nil;
 
 #pragma mark - 采集相关
 - (void)addCollectionData:(OBData *)data {
-    __weak typeof(self)weakself = self;
+    __weak typeof(self)weakSelf = self;
     if(self.addQueue && data) {
         dispatch_async(self.addQueue, ^{
             NSInteger dataCount = 0; //当前数据数量
@@ -89,15 +100,15 @@ static OBCollectionManager *collectionManager = nil;
                 
                 
                 if (isError) {
-                    if (weakself.httpErrorDataArray) {
-                        [weakself.httpErrorDataArray addObject:httpData];
-                        dataCount = weakself.httpErrorDataArray.count;
+                    if (weakSelf.httpErrorDataArray) {
+                        [weakSelf.httpErrorDataArray addObject:httpData];
+                        dataCount = weakSelf.httpErrorDataArray.count;
                     }
                 }
                 
-                if(weakself.httpDataArray) {
-                    [weakself.httpDataArray addObject:httpData];
-                    dataCount = weakself.httpDataArray.count;
+                if(weakSelf.httpDataArray) {
+                    [weakSelf.httpDataArray addObject:httpData];
+                    dataCount = weakSelf.httpDataArray.count;
                 }
                 [OBLog print:@"http请求:\n%@",[data description]];
             }

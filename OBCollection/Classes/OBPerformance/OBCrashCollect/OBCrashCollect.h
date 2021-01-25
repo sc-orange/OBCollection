@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OBCrashData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -13,7 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (OBCrashCollect *)sharedInstance;
 
-- (void)readCresh;
+- (void)startCollect;
+- (void)stopCollect;
+
+- (void)readCreshData:(void(^)(OBCrashData *crashData))complete;
 
 @end
 

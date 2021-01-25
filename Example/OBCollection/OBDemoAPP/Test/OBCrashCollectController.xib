@@ -21,11 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlQ-VX-M1z">
-                    <rect key="frame" x="30" y="54" width="80" height="30"/>
+                    <rect key="frame" x="30" y="54" width="111.5" height="30"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="R84-79-yEk"/>
-                        <constraint firstAttribute="width" constant="80" id="VDf-3k-hIy"/>
+                        <constraint firstAttribute="height" constant="30" id="W5E-tA-sTb"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <state key="normal" title="触发崩溃">
@@ -35,23 +34,54 @@
                         <action selector="crashAction:" destination="-1" eventType="touchUpInside" id="Z5U-mM-ole"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="上次崩溃堆栈信息" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="REp-4F-5kd">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="上次崩溃信息" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="REp-4F-5kd">
                     <rect key="frame" x="8" y="92" width="398" height="762"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHz-r1-VlH">
+                    <rect key="frame" x="151.5" y="54" width="111" height="30"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <state key="normal" title="堆栈信息">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="crashInfo:" destination="-1" eventType="touchUpInside" id="JGy-z7-8XL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ub7-Yy-dKN">
+                    <rect key="frame" x="272.5" y="54" width="111.5" height="30"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <state key="normal" title="其他信息">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="crashExtInfo:" destination="-1" eventType="touchUpInside" id="32H-6R-Aeh"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="SlQ-VX-M1z" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="30" id="1Sd-PG-MFw"/>
-                <constraint firstItem="SlQ-VX-M1z" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="732-Gr-WUn"/>
-                <constraint firstItem="REp-4F-5kd" firstAttribute="top" secondItem="SlQ-VX-M1z" secondAttribute="bottom" constant="8" id="7S1-z5-1IQ"/>
-                <constraint firstItem="REp-4F-5kd" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="8" id="QOp-Md-b3J"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="REp-4F-5kd" secondAttribute="bottom" constant="8" id="SL3-Ni-Tta"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="REp-4F-5kd" secondAttribute="trailing" constant="8" id="fBn-kc-Elv"/>
+                <constraint firstItem="yHz-r1-VlH" firstAttribute="leading" secondItem="SlQ-VX-M1z" secondAttribute="trailing" constant="10" id="3DZ-jY-10u"/>
+                <constraint firstItem="Ub7-Yy-dKN" firstAttribute="width" secondItem="SlQ-VX-M1z" secondAttribute="width" id="GSP-g4-0g7"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Ub7-Yy-dKN" secondAttribute="trailing" constant="30" id="MtB-jd-QC8"/>
+                <constraint firstItem="SlQ-VX-M1z" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="30" id="Oxg-ka-P3p"/>
+                <constraint firstItem="yHz-r1-VlH" firstAttribute="width" secondItem="SlQ-VX-M1z" secondAttribute="width" id="RWa-Nn-pz2"/>
+                <constraint firstItem="Ub7-Yy-dKN" firstAttribute="leading" secondItem="yHz-r1-VlH" secondAttribute="trailing" constant="10" id="WkM-TA-1io"/>
+                <constraint firstItem="yHz-r1-VlH" firstAttribute="top" secondItem="SlQ-VX-M1z" secondAttribute="top" id="d3g-Hv-zpq"/>
+                <constraint firstItem="yHz-r1-VlH" firstAttribute="bottom" secondItem="SlQ-VX-M1z" secondAttribute="bottom" id="eo0-jD-LjS"/>
+                <constraint firstItem="Ub7-Yy-dKN" firstAttribute="top" secondItem="SlQ-VX-M1z" secondAttribute="top" id="fPw-Gk-N91"/>
+                <constraint firstItem="SlQ-VX-M1z" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="gP0-da-ZEn"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="REp-4F-5kd" secondAttribute="trailing" constant="8" id="ph9-pm-ksL"/>
+                <constraint firstItem="REp-4F-5kd" firstAttribute="top" secondItem="SlQ-VX-M1z" secondAttribute="bottom" constant="8" id="qe8-Vo-FvA"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="REp-4F-5kd" secondAttribute="bottom" constant="8" id="vgi-La-I5u"/>
+                <constraint firstItem="Ub7-Yy-dKN" firstAttribute="bottom" secondItem="SlQ-VX-M1z" secondAttribute="bottom" id="xzt-W0-oxN"/>
+                <constraint firstItem="REp-4F-5kd" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="8" id="ya0-AX-Jq6"/>
             </constraints>
             <point key="canvasLocation" x="139" y="98"/>
         </view>
