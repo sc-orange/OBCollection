@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *)currentTime;
 //字典转json
 + (NSString *)dictionaryToString:(NSDictionary *)dic;
-
+//设备名称转换
 + (NSString *)deviceNameWithMachine:(NSString *)machine;
 @end
 

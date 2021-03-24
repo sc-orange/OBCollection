@@ -199,7 +199,7 @@
 
 - (void)startCollect {
     if (!self.hasCollected) {
-        [OBLog print:@"HTTP采集开启"];
+        [OBLog print:@"HTTP采集：开启成功"];
         self.hasCollected = YES;
         method_exchangeImplementations(self.original_Session, self.new_Session);
         method_exchangeImplementations(self.original_DataTaskWithRequest, self.new_DataTaskWithRequest);
