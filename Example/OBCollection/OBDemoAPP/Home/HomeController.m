@@ -9,13 +9,14 @@
 #import "HomeController.h"
 #import <OBCollection/OBCollection.h>
 
-@interface HomeController ()
+@interface HomeController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UISwitch *pageCollectSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *crachCollectSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *httpCollectSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *webViewCollectSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *catonCollectSwitch;
-
+@property (weak, nonatomic) IBOutlet UITextField *catonTimeTextField;
+@property (copy, nonatomic) NSString *catonTime;
 
 @end
 
@@ -23,26 +24,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.catonTimeTextField.delegate = self;
+    
     NSDictionary *dic = [[OBCollectionManager sharedInstance].configSetting readLocalSetting];
     self.pageCollectSwitch.on = [dic boolForKey:OBPageTrackSetting];
     self.crachCollectSwitch.on = [dic boolForKey:OBCrashSetting];
     self.httpCollectSwitch.on = [dic boolForKey:OBHttpSetting];
     self.webViewCollectSwitch.on = [dic boolForKey:OBWebViewSetting];
     self.catonCollectSwitch.on = [dic boolForKey:OBCatonSetting];
+    self.catonTime = [dic stringForKey:OBCatonTime];
+    self.catonTimeTextField.text = self.catonTime.length ? self.catonTime : @"0";
 }
 
 - (IBAction)collectClick:(UISwitch *)sender {
-    NSDictionary *setting = [self checkAllSwitch];
+    [self refreshSetting];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    self.catonTime = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    [self refreshSetting];
+    return YES;
+}
+
+- (void)refreshSetting {
+    NSDictionary *setting = [self checkAllSetting];
     [[OBCollectionManager sharedInstance].configSetting refreshLocalSetting:setting];
 }
 
-- (NSDictionary *)checkAllSwitch {
+- (NSDictionary *)checkAllSetting {
     BOOL isPageCollect = self.pageCollectSwitch.isOn;
     BOOL isCrashCollect = self.crachCollectSwitch.isOn;
     BOOL isHttpCollect = self.httpCollectSwitch.isOn;
     BOOL isWebViewCollect = self.webViewCollectSwitch.isOn;
     BOOL isCatonCollect = self.catonCollectSwitch.isOn;
-    return @{OBPageTrackSetting : @(isPageCollect), OBCrashSetting : @(isCrashCollect), OBHttpSetting : @(isHttpCollect), OBWebViewSetting : @(isWebViewCollect), OBCatonSetting : @(isCatonCollect)};
+    NSDictionary *settingDic = @{OBPageTrackSetting : @(isPageCollect), OBCrashSetting : @(isCrashCollect), OBHttpSetting : @(isHttpCollect), OBWebViewSetting : @(isWebViewCollect), OBCatonSetting : @(isCatonCollect), OBCatonTime : self.catonTime};
+    return settingDic;
 }
 
 @end

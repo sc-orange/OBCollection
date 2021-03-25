@@ -26,6 +26,8 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		C2528C5F260ADB4200A7F811 /* OBCatonTestPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2528C5D260ADB4200A7F811 /* OBCatonTestPageController.m */; };
 		C2528C60260ADB4200A7F811 /* OBCatonTestPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2528C5E260ADB4200A7F811 /* OBCatonTestPageController.xib */; };
+		C2528C75260C5FF700A7F811 /* OBCatonTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2528C73260C5FF700A7F811 /* OBCatonTestCell.m */; };
+		C2528C76260C5FF700A7F811 /* OBCatonTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2528C74260C5FF700A7F811 /* OBCatonTestCell.xib */; };
 		C26CA7DB25B29A16002B7826 /* OBCrashCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26CA7D925B29A16002B7826 /* OBCrashCollectController.m */; };
 		C26CA7DC25B29A16002B7826 /* OBCrashCollectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C26CA7DA25B29A16002B7826 /* OBCrashCollectController.xib */; };
 		C278F10C25AB3B8E004DDAC9 /* OBPageCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = C278F10A25AB3B8E004DDAC9 /* OBPageCollectController.m */; };
@@ -80,6 +82,9 @@
 		C2528C5C260ADB4200A7F811 /* OBCatonTestPageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCatonTestPageController.h; sourceTree = "<group>"; };
 		C2528C5D260ADB4200A7F811 /* OBCatonTestPageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCatonTestPageController.m; sourceTree = "<group>"; };
 		C2528C5E260ADB4200A7F811 /* OBCatonTestPageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OBCatonTestPageController.xib; sourceTree = "<group>"; };
+		C2528C72260C5FF700A7F811 /* OBCatonTestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCatonTestCell.h; sourceTree = "<group>"; };
+		C2528C73260C5FF700A7F811 /* OBCatonTestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCatonTestCell.m; sourceTree = "<group>"; };
+		C2528C74260C5FF700A7F811 /* OBCatonTestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OBCatonTestCell.xib; sourceTree = "<group>"; };
 		C26CA7D825B29A16002B7826 /* OBCrashCollectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCrashCollectController.h; sourceTree = "<group>"; };
 		C26CA7D925B29A16002B7826 /* OBCrashCollectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCrashCollectController.m; sourceTree = "<group>"; };
 		C26CA7DA25B29A16002B7826 /* OBCrashCollectController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OBCrashCollectController.xib; sourceTree = "<group>"; };
@@ -258,6 +263,9 @@
 				C2528C5C260ADB4200A7F811 /* OBCatonTestPageController.h */,
 				C2528C5D260ADB4200A7F811 /* OBCatonTestPageController.m */,
 				C2528C5E260ADB4200A7F811 /* OBCatonTestPageController.xib */,
+				C2528C72260C5FF700A7F811 /* OBCatonTestCell.h */,
+				C2528C73260C5FF700A7F811 /* OBCatonTestCell.m */,
+				C2528C74260C5FF700A7F811 /* OBCatonTestCell.xib */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -364,6 +372,7 @@
 				C2EA041F25A9F3AE006F9B22 /* TestController.xib in Resources */,
 				C2EA041D25A9F3AE006F9B22 /* HomeController.xib in Resources */,
 				C26CA7DC25B29A16002B7826 /* OBCrashCollectController.xib in Resources */,
+				C2528C76260C5FF700A7F811 /* OBCatonTestCell.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				C278F12625AB3FFB004DDAC9 /* OBHttpCollectController.xib in Resources */,
 				C2528C60260ADB4200A7F811 /* OBCatonTestPageController.xib in Resources */,
@@ -456,6 +465,7 @@
 				C2528C5F260ADB4200A7F811 /* OBCatonTestPageController.m in Sources */,
 				C2EA041E25A9F3AE006F9B22 /* TestController.m in Sources */,
 				C26CA7DB25B29A16002B7826 /* OBCrashCollectController.m in Sources */,
+				C2528C75260C5FF700A7F811 /* OBCatonTestCell.m in Sources */,
 				6003F59E195388D20070C39A /* OBAppDelegate.m in Sources */,
 				C278F10C25AB3B8E004DDAC9 /* OBPageCollectController.m in Sources */,
 				6003F5A7195388D20070C39A /* OBViewController.m in Sources */,
@@ -593,10 +603,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OBCollection/OBCollection-Prefix.pch";
 				INFOPLIST_FILE = "OBCollection/OBCollection-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "demo.OBCollection-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -610,10 +622,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OBCollection/OBCollection-Prefix.pch";
 				INFOPLIST_FILE = "OBCollection/OBCollection-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "demo.OBCollection-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

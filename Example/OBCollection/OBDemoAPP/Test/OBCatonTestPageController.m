@@ -7,8 +7,10 @@
 //
 
 #import "OBCatonTestPageController.h"
+#import "OBCatonTestCell.h"
 
-@interface OBCatonTestPageController ()
+@interface OBCatonTestPageController ()<UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -16,17 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.rowHeight = 60;
+    [self.tableView registerNib:[UINib nibWithNibName:@"OBCatonTestCell" bundle:nil] forCellReuseIdentifier:@"OBCatonTestCell"];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 100;
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    OBCatonTestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OBCatonTestCell" forIndexPath:indexPath];
+    return cell;
+}
 
 @end

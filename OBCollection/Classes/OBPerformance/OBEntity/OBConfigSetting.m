@@ -16,6 +16,7 @@
         _httpSwitch = NO;
         _webViewSwitch = NO;
         _catonSwitch = NO;
+        _catonTime = 0;
     }
     return self;
 }
@@ -26,6 +27,7 @@
     self.httpSwitch = [setting boolForKey:OBHttpSetting];
     self.webViewSwitch = [setting boolForKey:OBWebViewSetting];
     self.catonSwitch = [setting boolForKey:OBCatonSetting];
+    self.catonTime = [setting integerForKey:OBCatonTime];
 }
 
 - (NSDictionary *)readLocalSetting {

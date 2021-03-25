@@ -10,6 +10,7 @@
 #define OBHttpSetting @"OBHttpSetting"
 #define OBWebViewSetting @"OBWebViewSetting"
 #define OBCatonSetting @"OBCatonSetting"
+#define OBCatonTime @"OBCatonTime"
 
 #import <Foundation/Foundation.h>
 #import "NSDictionary+OBSafeDictionary.h"
@@ -27,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL webViewSwitch;
 // 卡顿采集开关
 @property (nonatomic, assign) BOOL catonSwitch;
+// 卡顿阈值
+@property (nonatomic, assign) NSInteger catonTime;
 
 //获取本地配置信息
 - (NSDictionary *)readLocalSetting;
