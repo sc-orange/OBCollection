@@ -169,8 +169,10 @@
 		B910E7418FC1FFB0242CA26F8AF3E392 /* OBCollectionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 720E35A9B1EC8E28028F0D3AE0693818 /* OBCollectionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC378874E7CC650C1B33F53327621DCB /* type_traits.h in Headers */ = {isa = PBXBuildFile; fileRef = AFA6E20C3AB1BA27EED15CB1DF695690 /* type_traits.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C081F26F38AB0417CF77E1202D7EC6E6 /* KSCrashMonitor_System.h in Headers */ = {isa = PBXBuildFile; fileRef = A7E9B5D9A349902651597D183B6571C1 /* KSCrashMonitor_System.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C2528C7B260C6C2700A7F811 /* OBCatonObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = C2528C79260C6C2700A7F811 /* OBCatonObserver.h */; };
-		C2528C7C260C6C2700A7F811 /* OBCatonObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C2528C7A260C6C2700A7F811 /* OBCatonObserver.m */; };
+		C217C0342611C54A00FB1B1A /* OBCatonData.h in Headers */ = {isa = PBXBuildFile; fileRef = C217C0322611C54A00FB1B1A /* OBCatonData.h */; };
+		C217C0352611C54A00FB1B1A /* OBCatonData.m in Sources */ = {isa = PBXBuildFile; fileRef = C217C0332611C54A00FB1B1A /* OBCatonData.m */; };
+		C217C03A2612BB4000FB1B1A /* OBCatonObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = C2528C79260C6C2700A7F811 /* OBCatonObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C217C0432612BB4400FB1B1A /* OBCatonObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C2528C7A260C6C2700A7F811 /* OBCatonObserver.m */; };
 		C2D42630C9E36697A503CF67E9562738 /* OBNSURLSessionCollectManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AD8CBCE0BA4B0A317CB374C32BEC3DD2 /* OBNSURLSessionCollectManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C458EE1A5970AB76CD746D2CB81E49FD /* KSCrashC.c in Sources */ = {isa = PBXBuildFile; fileRef = 173BBD7A488C8AD2C850AF93D8E91B6F /* KSCrashC.c */; };
 		C4994CDBC24F531347EE2B9AEE38B35A /* KSCrashMonitor_NSException.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC35F7080A5A00D822C10D33B943F2 /* KSCrashMonitor_NSException.m */; };
@@ -443,6 +445,8 @@
 		BDF9FB352D5F75324C2AD691F3521BF8 /* NSError+SimpleConstructor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+SimpleConstructor.h"; path = "Source/KSCrash/Recording/Tools/NSError+SimpleConstructor.h"; sourceTree = "<group>"; };
 		C07EDFB53572427F062834A032A71766 /* KSString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KSString.h; path = Source/KSCrash/Recording/Tools/KSString.h; sourceTree = "<group>"; };
 		C119A738EE9C7D83895B3C9FE98E398D /* KSCrashMonitor_Signal.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = KSCrashMonitor_Signal.c; path = Source/KSCrash/Recording/Monitors/KSCrashMonitor_Signal.c; sourceTree = "<group>"; };
+		C217C0322611C54A00FB1B1A /* OBCatonData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCatonData.h; sourceTree = "<group>"; };
+		C217C0332611C54A00FB1B1A /* OBCatonData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCatonData.m; sourceTree = "<group>"; };
 		C2528C79260C6C2700A7F811 /* OBCatonObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCatonObserver.h; sourceTree = "<group>"; };
 		C2528C7A260C6C2700A7F811 /* OBCatonObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCatonObserver.m; sourceTree = "<group>"; };
 		C2E819268B6215238C89330ABBE16CA3 /* OBLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = OBLog.m; sourceTree = "<group>"; };
@@ -1044,6 +1048,8 @@
 				C69BECEA1B7AE88F88CCF7342F914C68 /* OBData.m */,
 				0533D9CEEFD3CA0A861EB2E3FE7F2C01 /* OBHttpData.h */,
 				B652426D5442697AACEE70539D20FC46 /* OBHttpData.m */,
+				C217C0322611C54A00FB1B1A /* OBCatonData.h */,
+				C217C0332611C54A00FB1B1A /* OBCatonData.m */,
 			);
 			path = OBEntity;
 			sourceTree = "<group>";
@@ -1137,7 +1143,6 @@
 				8DDF59F7E7CD37CFEFE15163E214D8F3 /* KSCrashMonitor_CPPException.h in Headers */,
 				15C2610DC583695E9E280F4678BB5F14 /* KSCrashMonitor_Deadlock.h in Headers */,
 				D0D53C2CC2CCEE44D413B6D0B4DD2E88 /* KSCrashMonitor_MachException.h in Headers */,
-				C2528C7B260C6C2700A7F811 /* OBCatonObserver.h in Headers */,
 				0CE1800735FB81E6733A9C589710D7B0 /* KSCrashMonitor_NSException.h in Headers */,
 				4826F2ADB5E5A22AE31A53526F1318C9 /* KSCrashMonitor_Signal.h in Headers */,
 				C081F26F38AB0417CF77E1202D7EC6E6 /* KSCrashMonitor_System.h in Headers */,
@@ -1218,6 +1223,7 @@
 				F256E2DB8C0DF3A28887D0A559BDDAA3 /* NSDictionary+OBSafeDictionary.h in Headers */,
 				9D61556FB4B269B1673F45F2B7CA499E /* NSString+OBDateFormat.h in Headers */,
 				76F6C013FEA817CACCE97495DF86DB59 /* OBCollection-umbrella.h in Headers */,
+				C217C0342611C54A00FB1B1A /* OBCatonData.h in Headers */,
 				C63FA13D116975E21D719F6842A420F5 /* OBCollection.h in Headers */,
 				B910E7418FC1FFB0242CA26F8AF3E392 /* OBCollectionManager.h in Headers */,
 				F65C876954F090E483BD6A163CB7DDAF /* OBConfigSetting.h in Headers */,
@@ -1228,6 +1234,7 @@
 				CEF91697D0911A0573B7BAFF0AACA5D8 /* OBLog.h in Headers */,
 				935B6E3D2FD55C589A569D05F2382EE9 /* OBNSURLSessionCollect.h in Headers */,
 				C2D42630C9E36697A503CF67E9562738 /* OBNSURLSessionCollectManager.h in Headers */,
+				C217C03A2612BB4000FB1B1A /* OBCatonObserver.h in Headers */,
 				E91D608FB54F0837F9639A23D5695FFE /* OBPageTrackerCollect.h in Headers */,
 				E6EDCE502A36C96A32DA092DDE588994 /* OBUtils.h in Headers */,
 			);
@@ -1410,7 +1417,6 @@
 				F3D4B7CE5674106553A7C9299C28CCF3 /* KSCrashMonitorType.c in Sources */,
 				CEB0007EF6DD04E854C7A7ADD0724F62 /* KSCrashReport.c in Sources */,
 				B7073CC447AC0C9DC54423687BF29C38 /* KSCrashReportFilterAlert.m in Sources */,
-				C2528C7C260C6C2700A7F811 /* OBCatonObserver.m in Sources */,
 				3B7307993E2F5CDB9903CA8F04475D03 /* KSCrashReportFilterAppleFmt.m in Sources */,
 				9B70D20F76A73C9F84BF991350872159 /* KSCrashReportFilterBasic.m in Sources */,
 				D8DA1B36DA472E48649A7A1F5C9E5BCC /* KSCrashReportFilterGZip.m in Sources */,
@@ -1484,10 +1490,12 @@
 				6FAF4A1FFCEE4CA3ED58ECF6BCB707ED /* OBCollection-dummy.m in Sources */,
 				597BE61DD694A0A3B48E71267C129705 /* OBCollectionManager.m in Sources */,
 				7C3CDCA2D67DDA4C6EE31BC18C0330CA /* OBConfigSetting.m in Sources */,
+				C217C0352611C54A00FB1B1A /* OBCatonData.m in Sources */,
 				347F3F04D338297C865A1A565AC896A9 /* OBCrashCollect.m in Sources */,
 				AC4523DEFEDA8414932AE352657B1C1D /* OBCrashData.m in Sources */,
 				DADFB10CFFC51E6B1A31293BADEB3FA7 /* OBData.m in Sources */,
 				721D983DE71209736EB6129E201885E8 /* OBHttpData.m in Sources */,
+				C217C0432612BB4400FB1B1A /* OBCatonObserver.m in Sources */,
 				E48AC0EC9158A9D275AAC860435844E2 /* OBLog.m in Sources */,
 				2EF5004F83E4BE0A09F4124CE3A52CCE /* OBNSURLSessionCollect.m in Sources */,
 				ABEE8430C08127964B2557C7A08BB7E2 /* OBNSURLSessionCollectManager.m in Sources */,

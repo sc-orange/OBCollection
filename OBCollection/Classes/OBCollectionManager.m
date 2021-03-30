@@ -35,11 +35,12 @@ static OBCollectionManager *collectionManager = nil;
         self.crashCollect = [OBCrashCollect sharedInstance];
         self.pageTrackerCollect = [[OBPageTrackerCollect alloc] init];
         self.httpCollect = [[OBNSURLSessionCollect alloc] init];
+        self.catonObserver = [[OBCatonObserver alloc] init];
         //采集保存数据类
         self.crashData = [[OBCrashData alloc] init];
         self.httpDataArray = [NSMutableArray array];
         self.httpErrorDataArray = [NSMutableArray array];
-        
+        self.catonDataArray = [NSMutableArray array];
     }
     return self;
 }
@@ -59,21 +60,32 @@ static OBCollectionManager *collectionManager = nil;
 
 - (void)makeSettingWith:(NSDictionary *)setting {
     [self.configSetting setConfigSetting:setting];
+    self.pageTrackerCollect.isEnabled = self.configSetting.pageTrackSwitch;
+    
     if (self.configSetting.crashSwitch) {
         [self.crashCollect startCollect];
     }else {
         [self.crashCollect stopCollect];
     }
-    self.pageTrackerCollect.isEnabled = self.configSetting.pageTrackSwitch;
+    
     if (self.configSetting.httpSwitch) {
         [self.httpCollect startCollect];
+    }else {
+        [self.httpCollect stopCollect];
     }
     
+    if (self.configSetting.catonSwitch) {
+        [self.catonObserver startObserver];
+    }else {
+        [self.catonObserver stopObserver];
+    }
 }
 
 - (void)stopCollect {
     self.pageTrackerCollect.isEnabled = NO;
+    [self.crashCollect stopCollect];
     [self.httpCollect stopCollect];
+    [self.catonObserver stopObserver];
     
     if(self.addQueue) {
         self.addQueue = nil;
@@ -111,6 +123,13 @@ static OBCollectionManager *collectionManager = nil;
                     dataCount = weakSelf.httpDataArray.count;
                 }
                 [OBLog print:@"http请求:\n%@",[data description]];
+            }
+            else if ([data isKindOfClass:[OBCatonData class]]) {
+                if (weakSelf.catonDataArray) {
+                    [weakSelf.catonDataArray addObject:(OBCatonData *)data];
+                    dataCount = weakSelf.catonDataArray.count;
+                }
+                [OBLog print:@"卡顿数据:\n%@",[data description]];
             }
             
             if(dataCount >= maxCount) {
