@@ -130,7 +130,57 @@ static OBCatonObserver *_manager = nil;
     // 监听执行
     CFRunLoopAddObserver(CFRunLoopGetMain(), _runLoopObserver, kCFRunLoopCommonModes);
 
-//    //开启子线程，持续运行
+    //开启子线程，持续运行监测
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSInteger runLoopId = 0;
+        while (1) {
+            //1、 设置等待时间3秒，如果超过3秒，则超时，主线程卡顿
+            //2、 设置超时时间为lantency / 5，如果连续5次超时，主线程卡顿
+
+            //number不为0：超时，继续往下执行
+            NSInteger number = dispatch_semaphore_wait(_semaphore, dispatch_time(DISPATCH_TIME_NOW, _adrLantency * NSEC_PER_MSEC));;
+            if (number != 0) {
+                if (!_observer) {
+                    timeoutCount = 0;
+                    return ;
+                }
+
+                //主线程执行任务
+                if (self->_activity == kCFRunLoopBeforeSources || self->activity == kCFRunLoopAfterWaiting) {
+
+                    // 连续发生5次，则认为是卡顿
+                    if (_flag == 0) {
+                        if (++timeoutCount < 5) {
+                            continue;
+                        }
+                    }
+
+                    if (loopId != self->_runloopId) {
+                        @synchronized (self) {
+                            loopId = self->_runloopId;
+                            //卡顿的发生时间为当前时间 - adrLantency
+                            if (_flag == 0) {
+                                _sTime = [CTUtils currentTimeMillis] - _adrLantency * 5;
+                            }
+                            else
+                            {
+                                _sTime = [CTUtils currentTimeMillis] - _adrLantency ;
+                            }
+                            //卡顿
+                            _entity = [[CTCarltonEntity alloc] init];
+                            //卡顿的发生时间为当前时间 - adrLantency
+//                            NSLog(@"子线程监控主线程runloop状态 = %lu, runloopId = %ld,_sTime = %lld",self->activity, (long)self->_runloopId,_sTime);
+                            NSString *backTrace = [CTBackTrace ct_backtraceOfMainThread];
+                            [CTLog print:@"✖✖✖✖✖✖✖✖ 发生卡顿了 ✖✖✖✖✖✖✖✖\n【当前堆栈】：%@\n",backTrace];
+                            _entity.stackInfo = backTrace;
+                        }
+                    }
+//                    NSLog(@"CloopId = %ld",(long)loopId);
+                }
+            }
+            timeoutCount = 0;
+        }
+    });
 }
 
 @end
