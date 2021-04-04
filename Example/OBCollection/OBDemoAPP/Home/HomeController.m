@@ -32,8 +32,9 @@
     self.httpCollectSwitch.on = [dic boolForKey:OBHttpSetting];
     self.webViewCollectSwitch.on = [dic boolForKey:OBWebViewSetting];
     self.catonCollectSwitch.on = [dic boolForKey:OBCatonSetting];
-    self.catonTime = [dic stringForKey:OBCatonTime];
-    self.catonTimeTextField.text = self.catonTime.length ? self.catonTime : @"0";
+    NSString *catonTime = [dic stringForKey:OBCatonTime];
+    self.catonTime = catonTime.length > 0 ? catonTime : @"0";
+    self.catonTimeTextField.text = self.catonTime;
 }
 
 - (IBAction)collectClick:(UISwitch *)sender {

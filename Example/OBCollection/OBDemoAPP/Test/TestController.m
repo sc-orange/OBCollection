@@ -52,7 +52,8 @@ static NSString *const kCellIdentifier = @"kCellIdentifier";
         _dataArray = @[@{@"name" : @"页面轨迹采集", @"class" : @"OBPageCollectController"},
                        @{@"name" : @"HTTP采集", @"class" : @"OBHttpCollectController"},
                        @{@"name" : @"崩溃采集", @"class" : @"OBCrashCollectController"},
-                       @{@"name" : @"卡顿监测", @"class" : @"OBCatonTestPageController"}
+                       @{@"name" : @"卡顿监测", @"class" : @"OBCatonTestPageController"},
+                       @{@"name" : @"卡顿数据", @"class" : @"OBCatonDataPageController"}
         ];
     }
     return _dataArray;

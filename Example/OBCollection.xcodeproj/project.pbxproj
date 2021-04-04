@@ -24,6 +24,9 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		C219B2D8261962BD00075DAA /* caton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C219B2D7261962BD00075DAA /* caton.jpeg */; };
+		C219B2E226196CAC00075DAA /* OBCatonDataPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = C219B2E026196CAC00075DAA /* OBCatonDataPageController.m */; };
+		C219B2E326196CAC00075DAA /* OBCatonDataPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C219B2E126196CAC00075DAA /* OBCatonDataPageController.xib */; };
 		C2528C5F260ADB4200A7F811 /* OBCatonTestPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2528C5D260ADB4200A7F811 /* OBCatonTestPageController.m */; };
 		C2528C60260ADB4200A7F811 /* OBCatonTestPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2528C5E260ADB4200A7F811 /* OBCatonTestPageController.xib */; };
 		C2528C75260C5FF700A7F811 /* OBCatonTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2528C73260C5FF700A7F811 /* OBCatonTestCell.m */; };
@@ -79,6 +82,10 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A671D33E08D31B1A48366AD2 /* Pods_OBCollection_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBCollection_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A6011C4B186D1A1002CA8B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C219B2D7261962BD00075DAA /* caton.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = caton.jpeg; sourceTree = "<group>"; };
+		C219B2DF26196CAC00075DAA /* OBCatonDataPageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCatonDataPageController.h; sourceTree = "<group>"; };
+		C219B2E026196CAC00075DAA /* OBCatonDataPageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCatonDataPageController.m; sourceTree = "<group>"; };
+		C219B2E126196CAC00075DAA /* OBCatonDataPageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OBCatonDataPageController.xib; sourceTree = "<group>"; };
 		C2528C5C260ADB4200A7F811 /* OBCatonTestPageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCatonTestPageController.h; sourceTree = "<group>"; };
 		C2528C5D260ADB4200A7F811 /* OBCatonTestPageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCatonTestPageController.m; sourceTree = "<group>"; };
 		C2528C5E260ADB4200A7F811 /* OBCatonTestPageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OBCatonTestPageController.xib; sourceTree = "<group>"; };
@@ -248,6 +255,7 @@
 		C2EA041825A9F3AE006F9B22 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				C219B2D7261962BD00075DAA /* caton.jpeg */,
 				C2EA041B25A9F3AE006F9B22 /* TestController.h */,
 				C2EA041925A9F3AE006F9B22 /* TestController.m */,
 				C2EA041A25A9F3AE006F9B22 /* TestController.xib */,
@@ -266,6 +274,9 @@
 				C2528C72260C5FF700A7F811 /* OBCatonTestCell.h */,
 				C2528C73260C5FF700A7F811 /* OBCatonTestCell.m */,
 				C2528C74260C5FF700A7F811 /* OBCatonTestCell.xib */,
+				C219B2DF26196CAC00075DAA /* OBCatonDataPageController.h */,
+				C219B2E026196CAC00075DAA /* OBCatonDataPageController.m */,
+				C219B2E126196CAC00075DAA /* OBCatonDataPageController.xib */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -370,7 +381,9 @@
 				C278F10D25AB3B8E004DDAC9 /* OBPageCollectController.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				C2EA041F25A9F3AE006F9B22 /* TestController.xib in Resources */,
+				C219B2E326196CAC00075DAA /* OBCatonDataPageController.xib in Resources */,
 				C2EA041D25A9F3AE006F9B22 /* HomeController.xib in Resources */,
+				C219B2D8261962BD00075DAA /* caton.jpeg in Resources */,
 				C26CA7DC25B29A16002B7826 /* OBCrashCollectController.xib in Resources */,
 				C2528C76260C5FF700A7F811 /* OBCatonTestCell.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -472,6 +485,7 @@
 				C2EA041C25A9F3AE006F9B22 /* HomeController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				C278F12525AB3FFB004DDAC9 /* OBHttpCollectController.m in Sources */,
+				C219B2E226196CAC00075DAA /* OBCatonDataPageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, OBCatonType) {
     OBCatonTypeShotLongTime = 1,  //一次长时间监测
 };
 
-#define CatonObserverTime 1000 //卡顿监测临界值
+#define CatonObserverTime (19.9 * 5)  //卡顿监测临界值
 
 static OBCatonObserver *_manager = nil;
 
@@ -45,17 +45,22 @@ static OBCatonObserver *_manager = nil;
 
 - (instancetype)init {
     if (self = [super init]) {
-        _catonLimitTime = 300;
+        _catonCount = 0;
+        _catonTime = 0;
+        _runloopId = 0;
+        _catonLimitTime = 19.9;
     }
     return self;
 }
 
 - (void)startObserver {
-    
     NSInteger catonTime = [OBCollectionManager sharedInstance].configSetting.catonTime;
     if (catonTime > 0) {
         _catonLimitTime = catonTime;
-        _catonType = _catonLimitTime > CatonObserverTime;
+    }
+    if (_catonLimitTime * 5 > CatonObserverTime) {
+        _catonLimitTime = _catonLimitTime * 5;
+        _catonType = OBCatonTypeShotLongTime;
     }
 
     if (_runLoopObserver) {
@@ -99,19 +104,18 @@ static OBCatonObserver *_manager = nil;
                 if (self->_catonTime != 0) {
                     @synchronized (self) {
                         NSInteger cs = [OBUtils currentSeconds];
+                        
+                        [OBLog print:@"******卡顿******, 持续时间 = %ld, _catonTime = %ld", cs - self->_catonTime, (long)self->_catonTime];
+                        
                         NSArray *pageArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"ob_page_data"];
                         if (pageArray.count > 0) {
-                            self->_entity.pageName = pageArray[0];
+                            self->_entity.pageName = pageArray.lastObject;
                         }
-                        self->_entity.catonActionTime = [OBUtils currentTime];
                         self->_entity.spendTime = cs - self->_catonTime;
-                        
                         [[OBCollectionManager sharedInstance] addCollectionData:self->_entity];
                         self->_catonTime = 0;
                         self->_entity = nil;
                         self->_runloopId = 0;
-                        
-                        [OBLog print:@"******卡顿******, 持续时间 = %ld, _catonTime = %ld", cs - self->_catonTime, (long)self->_catonTime];
                     }
                 }
                 break;
@@ -134,53 +138,47 @@ static OBCatonObserver *_manager = nil;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSInteger runLoopId = 0;
         while (1) {
-            //1、 设置等待时间3秒，如果超过3秒，则超时，主线程卡顿
-            //2、 设置超时时间为lantency / 5，如果连续5次超时，主线程卡顿
-
+            //设置等待时间：_adrLantency * NSEC_PER_MSEC，如果超过，number不为0
             //number不为0：超时，继续往下执行
-            NSInteger number = dispatch_semaphore_wait(_semaphore, dispatch_time(DISPATCH_TIME_NOW, _adrLantency * NSEC_PER_MSEC));;
+            NSInteger number = dispatch_semaphore_wait(self->_semaphore, dispatch_time(DISPATCH_TIME_NOW, self->_catonLimitTime * NSEC_PER_MSEC));;
             if (number != 0) {
-                if (!_observer) {
-                    timeoutCount = 0;
+                if (!self->_runLoopObserver) {
+                    self->_catonCount = 0;
                     return ;
                 }
-
-                //主线程执行任务
-                if (self->_activity == kCFRunLoopBeforeSources || self->activity == kCFRunLoopAfterWaiting) {
-
+                if (self->_activity == kCFRunLoopBeforeSources || self->_activity == kCFRunLoopAfterWaiting) {
                     // 连续发生5次，则认为是卡顿
-                    if (_flag == 0) {
-                        if (++timeoutCount < 5) {
+                    if (self->_catonType == OBCatonTypeShotTime) {
+                        if (++self->_catonCount < 5) {
                             continue;
                         }
                     }
-
-                    if (loopId != self->_runloopId) {
+                    if (runLoopId != self->_runloopId) {
                         @synchronized (self) {
-                            loopId = self->_runloopId;
-                            //卡顿的发生时间为当前时间 - adrLantency
-                            if (_flag == 0) {
-                                _sTime = [CTUtils currentTimeMillis] - _adrLantency * 5;
+                            runLoopId = self->_runloopId;
+                            if (self->_catonType == OBCatonTypeShotTime) {
+                                self->_catonTime = [OBUtils currentSeconds] - self->_catonLimitTime * 5;
+                            } else {
+                                self->_catonTime = [OBUtils currentSeconds] - self->_catonLimitTime;
                             }
-                            else
-                            {
-                                _sTime = [CTUtils currentTimeMillis] - _adrLantency ;
-                            }
-                            //卡顿
-                            _entity = [[CTCarltonEntity alloc] init];
-                            //卡顿的发生时间为当前时间 - adrLantency
-//                            NSLog(@"子线程监控主线程runloop状态 = %lu, runloopId = %ld,_sTime = %lld",self->activity, (long)self->_runloopId,_sTime);
-                            NSString *backTrace = [CTBackTrace ct_backtraceOfMainThread];
-                            [CTLog print:@"✖✖✖✖✖✖✖✖ 发生卡顿了 ✖✖✖✖✖✖✖✖\n【当前堆栈】：%@\n",backTrace];
-                            _entity.stackInfo = backTrace;
+                            self->_entity = OBCatonData.new;
+                            self->_entity.catonActionTime = [OBUtils currentTime];
                         }
                     }
-//                    NSLog(@"CloopId = %ld",(long)loopId);
                 }
             }
-            timeoutCount = 0;
+            self->_catonCount = 0;
         }
     });
+}
+
+- (void)stopObserver {
+    if (!_runLoopObserver) {
+        return;
+    }
+    CFRunLoopRemoveObserver(CFRunLoopGetMain(), _runLoopObserver, kCFRunLoopCommonModes);
+    CFRelease(_runLoopObserver);
+    _runLoopObserver = NULL;
 }
 
 @end
