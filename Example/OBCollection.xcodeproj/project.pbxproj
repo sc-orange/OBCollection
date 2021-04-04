@@ -27,6 +27,8 @@
 		C219B2D8261962BD00075DAA /* caton.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C219B2D7261962BD00075DAA /* caton.jpeg */; };
 		C219B2E226196CAC00075DAA /* OBCatonDataPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = C219B2E026196CAC00075DAA /* OBCatonDataPageController.m */; };
 		C219B2E326196CAC00075DAA /* OBCatonDataPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C219B2E126196CAC00075DAA /* OBCatonDataPageController.xib */; };
+		C219B2E926197C9500075DAA /* OBWebViewCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = C219B2E726197C9500075DAA /* OBWebViewCollectController.m */; };
+		C219B2EA26197C9500075DAA /* OBWebViewCollectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C219B2E826197C9500075DAA /* OBWebViewCollectController.xib */; };
 		C2528C5F260ADB4200A7F811 /* OBCatonTestPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2528C5D260ADB4200A7F811 /* OBCatonTestPageController.m */; };
 		C2528C60260ADB4200A7F811 /* OBCatonTestPageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2528C5E260ADB4200A7F811 /* OBCatonTestPageController.xib */; };
 		C2528C75260C5FF700A7F811 /* OBCatonTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2528C73260C5FF700A7F811 /* OBCatonTestCell.m */; };
@@ -86,6 +88,9 @@
 		C219B2DF26196CAC00075DAA /* OBCatonDataPageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCatonDataPageController.h; sourceTree = "<group>"; };
 		C219B2E026196CAC00075DAA /* OBCatonDataPageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCatonDataPageController.m; sourceTree = "<group>"; };
 		C219B2E126196CAC00075DAA /* OBCatonDataPageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OBCatonDataPageController.xib; sourceTree = "<group>"; };
+		C219B2E626197C9500075DAA /* OBWebViewCollectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBWebViewCollectController.h; sourceTree = "<group>"; };
+		C219B2E726197C9500075DAA /* OBWebViewCollectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBWebViewCollectController.m; sourceTree = "<group>"; };
+		C219B2E826197C9500075DAA /* OBWebViewCollectController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OBWebViewCollectController.xib; sourceTree = "<group>"; };
 		C2528C5C260ADB4200A7F811 /* OBCatonTestPageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCatonTestPageController.h; sourceTree = "<group>"; };
 		C2528C5D260ADB4200A7F811 /* OBCatonTestPageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCatonTestPageController.m; sourceTree = "<group>"; };
 		C2528C5E260ADB4200A7F811 /* OBCatonTestPageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OBCatonTestPageController.xib; sourceTree = "<group>"; };
@@ -277,6 +282,9 @@
 				C219B2DF26196CAC00075DAA /* OBCatonDataPageController.h */,
 				C219B2E026196CAC00075DAA /* OBCatonDataPageController.m */,
 				C219B2E126196CAC00075DAA /* OBCatonDataPageController.xib */,
+				C219B2E626197C9500075DAA /* OBWebViewCollectController.h */,
+				C219B2E726197C9500075DAA /* OBWebViewCollectController.m */,
+				C219B2E826197C9500075DAA /* OBWebViewCollectController.xib */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -387,6 +395,7 @@
 				C26CA7DC25B29A16002B7826 /* OBCrashCollectController.xib in Resources */,
 				C2528C76260C5FF700A7F811 /* OBCatonTestCell.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				C219B2EA26197C9500075DAA /* OBWebViewCollectController.xib in Resources */,
 				C278F12625AB3FFB004DDAC9 /* OBHttpCollectController.xib in Resources */,
 				C2528C60260ADB4200A7F811 /* OBCatonTestPageController.xib in Resources */,
 			);
@@ -481,6 +490,7 @@
 				C2528C75260C5FF700A7F811 /* OBCatonTestCell.m in Sources */,
 				6003F59E195388D20070C39A /* OBAppDelegate.m in Sources */,
 				C278F10C25AB3B8E004DDAC9 /* OBPageCollectController.m in Sources */,
+				C219B2E926197C9500075DAA /* OBWebViewCollectController.m in Sources */,
 				6003F5A7195388D20070C39A /* OBViewController.m in Sources */,
 				C2EA041C25A9F3AE006F9B22 /* HomeController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
