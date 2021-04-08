@@ -39,6 +39,7 @@
 		C278F10D25AB3B8E004DDAC9 /* OBPageCollectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C278F10B25AB3B8E004DDAC9 /* OBPageCollectController.xib */; };
 		C278F12525AB3FFB004DDAC9 /* OBHttpCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = C278F12325AB3FFB004DDAC9 /* OBHttpCollectController.m */; };
 		C278F12625AB3FFB004DDAC9 /* OBHttpCollectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C278F12425AB3FFB004DDAC9 /* OBHttpCollectController.xib */; };
+		C29143FB261ED6850019FFAB /* OBJSPage.html in Resources */ = {isa = PBXBuildFile; fileRef = C29143FA261ED6850019FFAB /* OBJSPage.html */; };
 		C2EA041025A9F3A5006F9B22 /* OBTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA040F25A9F3A4006F9B22 /* OBTabBarController.m */; };
 		C2EA041C25A9F3AE006F9B22 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EA041525A9F3AE006F9B22 /* HomeController.m */; };
 		C2EA041D25A9F3AE006F9B22 /* HomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2EA041625A9F3AE006F9B22 /* HomeController.xib */; };
@@ -106,6 +107,7 @@
 		C278F12225AB3FFB004DDAC9 /* OBHttpCollectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBHttpCollectController.h; sourceTree = "<group>"; };
 		C278F12325AB3FFB004DDAC9 /* OBHttpCollectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBHttpCollectController.m; sourceTree = "<group>"; };
 		C278F12425AB3FFB004DDAC9 /* OBHttpCollectController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OBHttpCollectController.xib; sourceTree = "<group>"; };
+		C29143FA261ED6850019FFAB /* OBJSPage.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = OBJSPage.html; sourceTree = "<group>"; };
 		C2EA040E25A9F3A4006F9B22 /* OBTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBTabBarController.h; sourceTree = "<group>"; };
 		C2EA040F25A9F3A4006F9B22 /* OBTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBTabBarController.m; sourceTree = "<group>"; };
 		C2EA041525A9F3AE006F9B22 /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		C2EA041825A9F3AE006F9B22 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				C29143FA261ED6850019FFAB /* OBJSPage.html */,
 				C219B2D7261962BD00075DAA /* caton.jpeg */,
 				C2EA041B25A9F3AE006F9B22 /* TestController.h */,
 				C2EA041925A9F3AE006F9B22 /* TestController.m */,
@@ -387,6 +390,7 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				C278F10D25AB3B8E004DDAC9 /* OBPageCollectController.xib in Resources */,
+				C29143FB261ED6850019FFAB /* OBJSPage.html in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				C2EA041F25A9F3AE006F9B22 /* TestController.xib in Resources */,
 				C219B2E326196CAC00075DAA /* OBCatonDataPageController.xib in Resources */,
