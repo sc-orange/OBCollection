@@ -138,11 +138,11 @@
 
 //需要响应身份验证时调用 同样在block中需要传入用户身份凭证
 - (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler{
-//    //用户身份信息
-//    NSURLCredential * newCred = [[NSURLCredential alloc] initWithUser:@"user123" password:@"123" persistence:NSURLCredentialPersistenceNone];
-//    //为 challenge 的发送方提供 credential
-//    [challenge.sender useCredential:newCred forAuthenticationChallenge:challenge];
-//    completionHandler(NSURLSessionAuthChallengeUseCredential,newCred);
+    //用户身份信息
+    NSURLCredential *newCred = [[NSURLCredential alloc] initWithUser:@"user123" password:@"123" persistence:NSURLCredentialPersistenceNone];
+    //为 challenge 的发送方提供 credential
+    [challenge.sender useCredential:newCred forAuthenticationChallenge:challenge];
+    completionHandler(NSURLSessionAuthChallengeUseCredential,newCred);
 }
 //进程被终止时调用
 - (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView{
