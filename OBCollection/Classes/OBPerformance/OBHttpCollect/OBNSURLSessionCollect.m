@@ -169,7 +169,7 @@
 @end
 
 @interface OBNSURLSessionCollect()
-@property(nonatomic) BOOL hasCollected;
+@property(nonatomic, assign) BOOL hasCollected;
 @property (nonatomic,assign) Method original_Session;
 @property (nonatomic,assign) Method new_Session;
 

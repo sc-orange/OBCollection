@@ -15,6 +15,7 @@
 #import "OBNSURLSessionCollect.h"
 #import "OBCrashCollect.h"
 #import "OBCatonObserver.h"
+#import "OBWebViewCollect.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -32,6 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) OBCrashCollect *crashCollect;
 //卡顿采集类
 @property (nonatomic, strong) OBCatonObserver *catonObserver;
+//WebView采集类
+@property (nonatomic, strong) OBWebViewCollect *webViewCollect;
 
 
 //HTTP

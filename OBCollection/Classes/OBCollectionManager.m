@@ -36,6 +36,7 @@ static OBCollectionManager *collectionManager = nil;
         self.pageTrackerCollect = [[OBPageTrackerCollect alloc] init];
         self.httpCollect = [[OBNSURLSessionCollect alloc] init];
         self.catonObserver = [[OBCatonObserver alloc] init];
+        self.webViewCollect = [[OBWebViewCollect alloc] init];
         //采集保存数据类
         self.crashData = [[OBCrashData alloc] init];
         self.httpDataArray = [NSMutableArray array];
@@ -78,6 +79,12 @@ static OBCollectionManager *collectionManager = nil;
         [self.catonObserver startObserver];
     }else {
         [self.catonObserver stopObserver];
+    }
+    
+    if (self.configSetting.webViewSwitch) {
+        [self.webViewCollect startWebViewCollect];
+    }else {
+        [self.webViewCollect stopWebViewCollect];
     }
 }
 
