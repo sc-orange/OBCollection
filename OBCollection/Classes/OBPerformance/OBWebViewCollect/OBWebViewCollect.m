@@ -16,22 +16,13 @@
 
 @implementation NewScriptMessageHandler
 
-- (id)initWithDelegate:(id)delegate {
-    if (self = [super init]) {
-        if (delegate) {
-            _delegate = delegate;
-        }
-    }
-    return self;
-}
-
-- (void)dealloc {
-    _delegate = nil;
-}
-
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     if ([message.name isEqualToString:@"jsToOcNoPrams"]) {
-        NSLog(@"111");
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"我是HookWebView的弹窗" message:@"不带参数" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:([UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        }])];
+        UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+        [keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
     }
 }
 @end
