@@ -210,7 +210,7 @@
         config.preferences = preference;
         
         //这个类主要用来做native与JavaScript的交互管理
-        WKUserContentController * content = [[WKUserContentController alloc] init];
+        WKUserContentController *content = [[WKUserContentController alloc] init];
         //注册一个name为jsToOcNoPrams的js方法 设置处理接收JS方法的对象
         [content addScriptMessageHandler:self  name:@"jsToOcNoPrams"];
         [content addScriptMessageHandler:self  name:@"jsToOcWithPrams"];

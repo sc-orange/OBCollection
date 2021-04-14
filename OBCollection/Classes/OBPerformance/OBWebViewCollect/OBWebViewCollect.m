@@ -10,9 +10,7 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 
-@interface NewScriptMessageHandler: NSObject <WKScriptMessageHandler>{
-    id _delegate;
-}
+@interface NewScriptMessageHandler: NSObject <WKScriptMessageHandler>
 
 @end
 
@@ -34,9 +32,6 @@
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     if ([message.name isEqualToString:@"jsToOcNoPrams"]) {
         NSLog(@"111");
-    }
-    if (_delegate && [_delegate respondsToSelector:@selector(userContentController:didReceiveScriptMessage:)]) {
-        [_delegate userContentController:userContentController didReceiveScriptMessage:message];
     }
 }
 @end
@@ -68,16 +63,16 @@
 @interface OBWebViewCollect ()
 @property(nonatomic, assign) BOOL hasCollected;
 
-@property (nonatomic,assign) Method original_InitWithFrameConfiguration;
-@property (nonatomic,assign) Method new_InitWithFrameConfiguration;
+@property (nonatomic, assign) Method original_InitWithFrameConfiguration;
+@property (nonatomic, assign) Method new_InitWithFrameConfiguration;
 @end
 
 @implementation OBWebViewCollect
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.original_InitWithFrameConfiguration = class_getClassMethod(NSClassFromString(@"WKWebView"), @selector(initWithFrame:configuration:));
-        self.new_InitWithFrameConfiguration = class_getClassMethod(NSClassFromString(@"WKWebView"), @selector(newInitWithFrame:configuration:));
+        self.original_InitWithFrameConfiguration = class_getInstanceMethod(NSClassFromString(@"WKWebView"), @selector(initWithFrame:configuration:));
+        self.new_InitWithFrameConfiguration = class_getInstanceMethod(NSClassFromString(@"WKWebView"), @selector(newInitWithFrame:configuration:));
     }
     return self;
 }
@@ -86,7 +81,7 @@
     if (!self.hasCollected) {
         [OBLog print:@"WebView采集：开启成功"];
         self.hasCollected = YES;
-        method_exchangeImplementations(self.original_InitWithFrameConfiguration, self.self.new_InitWithFrameConfiguration);
+        method_exchangeImplementations(self.original_InitWithFrameConfiguration, self.new_InitWithFrameConfiguration);
     }
 }
 
@@ -94,7 +89,7 @@
     if (self.hasCollected) {
         [OBLog print:@"WebView采集关闭"];
         self.hasCollected = NO;
-        method_exchangeImplementations(self.original_InitWithFrameConfiguration, self.self.new_InitWithFrameConfiguration);
+        method_exchangeImplementations(self.original_InitWithFrameConfiguration, self.new_InitWithFrameConfiguration);
     }
 }
 @end
