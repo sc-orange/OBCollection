@@ -45,13 +45,18 @@
             void (^swizzledBlock)(Class) = ^ void(Class cls) {
                 NSString *clsName = NSStringFromClass([cls class]);
                 ((void (*)(id, SEL))objc_msgSend)(cls, newSelector);
-                if (weakself.isEnabled) {
+                if (weakself.isEnabled && [self canSave:clsName]) {
                     [weakself savePageInfo:clsName];
                 }
             };
             [OBUtils replaceSelector:originalSelector onClass:class withBlock:swizzledBlock newSelector:newSelector];
         }
     });
+}
+
+- (BOOL)canSave:(NSString *)page {
+    NSArray *sysPage = @[@"OBTabBarController", @"UINavigationController", @"UIInputWindowController", @"UIEditingOverlayViewController"];
+    return ![sysPage containsObject:page];
 }
 
 - (void)savePageInfo:(NSString *)name {
